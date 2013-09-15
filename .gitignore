@@ -1,0 +1,21 @@
+Library/
+.ssh/
+.subversion/
+# OS generated files #
+.DS_Store
+.DS_Store?
+.gitconfig
+.Trashes
+Thubs.db
+.bash_profile
+.bashrc
+.ackrc
+.gemrc
+.zprofile
+.netrc
+.zshrc
+.profile
+.oh-my-zsh/
+.exercism
+.gem/
+.gemrc
