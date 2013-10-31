@@ -2,9 +2,10 @@
 # you can make as many tabs as you wish...
 
 project_name: dev
-project_root: ~/Dropbox/Programming/code
-tabs:
+project_root: ~/Dropbox/code
+windows:
   - editor: vim
   - shell: 
   - console: 
   - server: 
+  - todo: vim todos.markdown

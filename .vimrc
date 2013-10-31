@@ -1,7 +1,7 @@
 set nocompatible
-set shell=/bin/zsh 
+" set shell=/bin/zsh
 set relativenumber
-
+set shell=/bin/bash
 syntax enable
 filetype plugin indent on
 set clipboard=unnamed
@@ -23,13 +23,17 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'bling/vim-airline'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Valloric/YouCompleteMe'
 
 "vim and tmux
-Bundle 'benmills/vimux'
 Bundle 'jgdavey/vim-turbux'
 Bundle 'christoomey/vim-tmux-navigator'
 
 "tim pope.
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
@@ -41,14 +45,16 @@ Bundle 'tpope/vim-rails.git'
 
 " Matchit plugin 
 runtime macros/matchit.vim
-
 set showmode
-
+set mouse=a
+set ttimeoutlen=100
 set backspace=indent,eol,start    " Intuitive backspacing.
 set hidden 
 set autoindent
 set wildmenu
 set wildmode=list:longest
+
+au BufNewFile,BufRead *.ejs set filetype=html
 
 set history=200
 set ignorecase
@@ -67,12 +73,15 @@ set title
 
 set nobackup
 set nowritebackup
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location: "
+" set directory=$HOME/.vim/tmp//,.  
 
 set tabstop=2
 set softtabstop=2 
 set shiftwidth=2
 set expandtab
+
+set statusline=%F%m%r%h%w\ 
+set statusline+=%{fugitive#statusline()}\    
 
 set laststatus=2
 set cursorline
@@ -88,8 +97,8 @@ colorscheme base16-default
 set background=dark
 set vb t_vb=     " no visual bell & flash "
 
+"tab switching
 map <C-t> gt
-map <C-T> gT
 
 " adds dot command to visual mode "
 vnoremap . :norm.<CR>
@@ -97,17 +106,23 @@ vnoremap . :norm.<CR>
 "Easy expansion of file path"
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" Vimux shortcuts "
-map <Leader>c :w<CR> :VimuxPromptCommand<CR>
-map <Leader>r :w<CR> :VimuxRunLastCommand<CR>
-map <Leader>q :VimuxCloseRunner<CR>
-map <Leader>s :w<CR> :call VimuxRunCommand("rspec spec")<CR>
+"run a ruby file
+map <Leader>b :w<CR>:!ruby %<CR>
 
 "Reloads source file on save
 if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
+  autocmd! bufwritepost .vimrc source $MYVIMRC
 endif
 
 "Leader - v to open sourcefile
 nmap <Leader>v :vsp $MYVIMRC<CR>
 
+"tabular
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+
+let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
+
+autocmd FileType javascript inoremap {<CR> {<CR>}<Esc><S-o>
