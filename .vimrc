@@ -1,6 +1,7 @@
 set nocompatible
 " set shell=/bin/zsh
-set relativenumber
+set relativenumber 
+set number  
 set shell=/bin/bash
 syntax enable
 filetype plugin indent on
@@ -13,7 +14,6 @@ Bundle 'gmarik/vundle'
 
 " My Bundles
 Bundle 'epmatsw/ag.vim'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'Townk/vim-autoclose'
@@ -23,16 +23,11 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'terryma/vim-multiple-cursors'
+" Bundle 'terryma/vim-multiple-cursors'
 Bundle 'bling/vim-airline'
 Bundle 'pangloss/vim-javascript'
-Bundle 'Valloric/YouCompleteMe'
-
-"vim and tmux
 Bundle 'jgdavey/vim-turbux'
 Bundle 'christoomey/vim-tmux-navigator'
-
-"tim pope.
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
@@ -42,6 +37,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/nerdtree'
 
 " Matchit plugin 
 runtime macros/matchit.vim
@@ -93,7 +89,7 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme base16-default
+colorscheme base16-monokai
 set background=dark
 set vb t_vb=     " no visual bell & flash "
 
@@ -108,6 +104,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "run a ruby file
 map <Leader>b :w<CR>:!ruby %<CR>
+
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
 
 "Reloads source file on save
 if has("autocmd")
@@ -125,4 +124,4 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 
-autocmd FileType javascript inoremap {<CR> {<CR>}<Esc><S-o>
+map <C-N> :NERDTreeToggle<CR>
