@@ -13,6 +13,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'epmatsw/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
@@ -23,7 +24,6 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'vim-ruby/vim-ruby'
-" Bundle 'terryma/vim-multiple-cursors'
 Bundle 'bling/vim-airline'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jgdavey/vim-turbux'
@@ -89,7 +89,7 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme base16-monokai
+colorscheme solarized
 set background=dark
 set vb t_vb=     " no visual bell & flash "
 

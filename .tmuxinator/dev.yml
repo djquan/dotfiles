@@ -4,8 +4,12 @@
 project_name: dev
 project_root: ~/Dropbox/code
 windows:
-  - editor: vim
+  - editor: 
+      layout: 818e,238x58,0,0[238x40,0,0,0,238x17,0,41,5]
+      panes: 
+        - vim
+        - 
   - shell: 
   - console: 
   - server: 
-  - todo: vim todos.markdown
+  - sickbeard: sickbeard

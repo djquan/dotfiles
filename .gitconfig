@@ -1,0 +1,25 @@
+[user]
+	name = Daniel Quan
+	email = djquan@gmail.com
+[core]
+	editor = vim  
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	safecrlf = true
+[github]
+	user = djquan
+[init]
+	templatedir = ~/.git_template
+[alias]
+	ctags = !.git/hooks/ctags
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  type = cat-file -t
+  dump = cat-file -p
+[color]
+	ui = true
+[push]
+	default = simple
