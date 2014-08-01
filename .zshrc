@@ -7,7 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="gallois"
 export EDITOR=vim
 setopt noflowcontrol
-
+export GOPATH=$HOME/Dropbox/code/go
+export GOROOT="/usr/local/Cellar/go/1.3/libexec"
+source $(brew --prefix nvm)/nvm.sh
 stty start undef
 stty stop undef
 # Example aliases
@@ -49,19 +51,26 @@ LISTMAX=999
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 # Customize to your needs...
-export PATH=$PATH:~/bin:usr/local/bin:/~/bin:/usr/bin:/usr/sbin:/sbin:/bin
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+export PATH=$PATH:usr/local/bin:~/bin:/~/bin:/usr/bin:/usr/sbin:/sbin:/bin
+PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 alias :cd='cd'
 alias irb='pry'
 alias sickbeard='python ~/bin/my-sickbeard-install/sickbeard.py'
-alias vague='cd ~/bt/dev-box && vagrant up && vagrant ssh -- -A'
 alias top='htop'
 
 pbpush () {
   pbpaste  | ssh $1 'pbcopy'
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$NODE_PATH
+export PATH=$PATH:~/npm/bin
+
+## Work Laptop Aliases
+alias gotime='cd $GOPATH/src/github.com/djquan/'
+alias vague='cd ~/bt/dev-box && vagrant up && vagrant ssh -- -A'
+alias warp='afplay ~/bt/system-scripts/pairing_stations/warp_pipe.wav; ssh warp1'

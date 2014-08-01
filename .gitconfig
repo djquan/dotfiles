@@ -3,8 +3,8 @@
 	email = djquan@gmail.com
 [core]
 	editor = vim  
-	excludesfile = ~/.gitignore
-	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	autocrlf = false
 	safecrlf = true
 [github]
 	user = djquan
