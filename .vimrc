@@ -45,6 +45,7 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 
 call vundle#end() 
