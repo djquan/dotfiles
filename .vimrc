@@ -44,8 +44,6 @@ Plugin 'jnwhiteh/vim-golang'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
-Plugin 'ekalinin/Dockerfile.vim'
 
 
 call vundle#end() 
@@ -99,7 +97,7 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme base16-monokai
+colorscheme solarized
 set background=dark
 set vb t_vb=     " no visual bell & flash "
 "tab switching
