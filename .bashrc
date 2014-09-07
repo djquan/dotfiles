@@ -35,6 +35,10 @@ if hash brew 2>/dev/null; then
   source $(brew --prefix nvm)/nvm.sh
 fi
 
+if ! hash pbcopy 2>/dev/null ; then
+  alias pbcopy='xclip -selection clipboard'
+fi
+
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion # for RVM completion
 
 GIT_PS1_SHOWUPSTREAM="auto verbose"
