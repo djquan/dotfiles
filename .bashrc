@@ -1,7 +1,6 @@
 export EDITOR=vim
 export GOPATH=$HOME/Dropbox/code/go
 export GOROOT="/usr/local/Cellar/go/1.3/libexec"
-source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR=~/.nvm
 
 export PATH=$PATH:usr/local/bin:~/bin:/~/bin:/usr/bin:/usr/sbin:/sbin:/bin
@@ -26,12 +25,17 @@ alias gcmsg='git commit -m'
 alias gp='git push'
 alias gpull='git pull --rebase'
 
-if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
-  . $(brew --prefix)/etc/bash_completion.d
+if hash brew 2>/dev/null; then
+  if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
+    . $(brew --prefix)/etc/bash_completion.d
+  fi
+  if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+    source `brew --prefix`/etc/bash_completion.d/git-completion.bash;
+  fi # for Git completion
+  source $(brew --prefix nvm)/nvm.sh
 fi
 
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion # for RVM completion
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then source `brew --prefix`/etc/bash_completion.d/git-completion.bash; fi # for Git completion
 
 GIT_PS1_SHOWUPSTREAM="auto verbose"
 GIT_PS1_SHOWCOLORHINTS="yes"
