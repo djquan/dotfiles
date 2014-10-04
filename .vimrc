@@ -44,6 +44,8 @@ Plugin 'jnwhiteh/vim-golang'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'spiegela/vimix'
 
 
 call vundle#end() 
@@ -59,6 +61,8 @@ set wildmenu
 set wildmode=list:longest
 
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.ex set filetype=elixir
+au BufNewFile,BufRead *.exs set filetype=elixir
 
 set history=200
 set ignorecase
@@ -78,6 +82,8 @@ set title
 set nobackup
 set nowritebackup
 " set directory=$HOME/.vim/tmp//,.  
+
+let g:vimix_map_keys = 1
 
 set tabstop=2
 set softtabstop=2 
@@ -142,6 +148,3 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 
 " opens quickfix after git grepping
 autocmd QuickFixCmdPost *grep* cwindow
-
-
-nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
