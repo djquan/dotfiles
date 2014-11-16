@@ -52,6 +52,5 @@ c_red='\[\e[31m\]'
 c_clear='\[\e[0m\]'
 c_blue='\[\e[34m\]'
 c_yellow='\[\e[33m\]'
-rvm_prompt="($c_yellow$(rvm-prompt)$c_clear)"
 
-export PROMPT_COMMAND='__git_ps1 "[$c_blue\w$c_clear] $rvm_prompt" " $ ";'
+export PROMPT_COMMAND='__git_ps1 "[$c_yellow\u@\h$c_clear] [$c_blue\w$c_clear]" " $ ";'
