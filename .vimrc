@@ -46,6 +46,9 @@ Plugin 'einars/js-beautify'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'spiegela/vimix'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
 
 
 call vundle#end() 
@@ -124,6 +127,7 @@ if has("autocmd")
   autocmd FileType go autocmd BufWritePre <buffer> Fmt
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   autocmd FileType javascript autocmd BufWritePre <buffer> call JsBeautify()
+  autocmd BufRead,BufNewFile Dockerfile* setf Dockerfile
 endif
 
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
