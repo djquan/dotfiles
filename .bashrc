@@ -53,4 +53,5 @@ c_clear='\[\e[0m\]'
 c_blue='\[\e[34m\]'
 c_yellow='\[\e[33m\]'
 
+export TERM=xterm-256color
 export PROMPT_COMMAND='__git_ps1 "[$c_yellow\u@\h$c_clear] [$c_blue\w$c_clear]" " $ ";'
