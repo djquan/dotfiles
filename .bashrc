@@ -15,7 +15,7 @@ alias vague='cd ~/bt/dev-box && vagrant up && vagrant ssh -- -A'
 alias warp='afplay ~/bt/system-scripts/pairing_stations/warp_pipe.wav; ssh warp1'
 alias irb='pry'
 alias top='htop'
-alias l='ls -lahG'
+alias l='ls -lahGp'
 
 # Git alias
 alias gd='git diff'
