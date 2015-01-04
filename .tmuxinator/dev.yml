@@ -11,4 +11,4 @@ windows:
         - 
   - shell: 
   - console: 
-  - server: 
+  - server: sickbeard

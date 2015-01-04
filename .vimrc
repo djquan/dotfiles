@@ -49,6 +49,7 @@ Plugin 'spiegela/vimix'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
+Plugin 'chriskempson/base16-vim'
 
 
 call vundle#end() 
@@ -106,7 +107,7 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme solarized
+colorscheme base16-monokai
 set background=dark
 set vb t_vb=     " no visual bell & flash "
 "tab switching
