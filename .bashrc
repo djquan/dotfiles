@@ -10,6 +10,8 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$NODE_PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+stty -ixon
+
 alias gotime='cd $GOPATH/src/github.com/djquan/'
 alias vague='cd ~/bt/dev-box && vagrant up && vagrant ssh -- -A'
 alias warp='afplay ~/bt/system-scripts/pairing_stations/warp_pipe.wav; ssh warp1'
