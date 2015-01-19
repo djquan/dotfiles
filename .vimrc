@@ -43,14 +43,11 @@ Plugin 'benmills/vimux-golang'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'spiegela/vimix'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
-Plugin 'chriskempson/base16-vim'
-
 
 call vundle#end() 
 " Matchit plugin 
@@ -107,7 +104,8 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme base16-monokai
+colorscheme molokai
+let g:molokai_original = 1
 set background=dark
 set vb t_vb=     " no visual bell & flash "
 "tab switching
@@ -149,7 +147,6 @@ map <C-N> :NERDTreeToggle<CR>
 map <Leader>b :CtrlPBuffer<CR>
 
 map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
-
 
 " opens quickfix after git grepping
 autocmd QuickFixCmdPost *grep* cwindow
