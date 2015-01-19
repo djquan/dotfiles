@@ -64,6 +64,7 @@ set wildmode=list:longest
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.ex set filetype=elixir
 au BufNewFile,BufRead *.exs set filetype=elixir
+au BufNewFile,BufRead *.eex set filetype=eelixir
 
 set history=200
 set ignorecase
