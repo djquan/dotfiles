@@ -48,6 +48,7 @@ Plugin 'spiegela/vimix'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end() 
 " Matchit plugin 
@@ -105,9 +106,8 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme molokai
-let g:molokai_original = 1
-set background=dark
+colorscheme solarized
+set background=light
 set vb t_vb=     " no visual bell & flash "
 "tab switching
 map <C-t> gt
