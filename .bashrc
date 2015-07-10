@@ -9,6 +9,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$NODE_PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/bazel/output"
 
 stty -ixon
 
