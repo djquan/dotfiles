@@ -58,3 +58,6 @@ c_yellow='\[\e[33m\]'
 
 export TERM=xterm-256color
 export PROMPT_COMMAND='__git_ps1 "[$c_yellow\u@\h$c_clear] [$c_blue\w$c_clear]" " $ ";'
+
+ BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+ [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL ]]
