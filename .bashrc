@@ -1,21 +1,13 @@
 export EDITOR=vim
-export GOPATH=$HOME/Dropbox/code/go
-export GOROOT="/usr/local/Cellar/go/1.3/libexec"
 export NVM_DIR=~/.nvm
 
 export PATH=$PATH:usr/local/bin:~/bin:/~/bin:/usr/bin:/usr/sbin:/sbin:/bin
-export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$NODE_PATH
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/bazel/output"
 
 stty -ixon
 
-alias gotime='cd $GOPATH/src/github.com/djquan/'
-alias vague='cd ~/bt/dev-box && vagrant up && vagrant ssh -- -A'
-alias warp='afplay ~/bt/system-scripts/pairing_stations/warp_pipe.wav; ssh warp1'
 alias irb='pry'
 alias top='htop'
 alias l='ls -lahGp'
@@ -28,16 +20,6 @@ alias ga='git add'
 alias gcmsg='git commit -m'
 alias gp='git push'
 alias gpull='git pull --rebase'
-
-if hash brew 2>/dev/null; then
-  if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
-    . $(brew --prefix)/etc/bash_completion.d
-  fi
-  if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-    source `brew --prefix`/etc/bash_completion.d/git-completion.bash;
-  fi # for Git completion
-  source $(brew --prefix nvm)/nvm.sh
-fi
 
 if ! hash pbcopy 2>/dev/null ; then
   alias pbcopy='xclip -selection clipboard'
@@ -59,5 +41,7 @@ c_yellow='\[\e[33m\]'
 export TERM=xterm-256color
 export PROMPT_COMMAND='__git_ps1 "[$c_yellow\u@\h$c_clear] [$c_blue\w$c_clear]" " $ ";'
 
- BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
- [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL ]]
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL ]]
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
