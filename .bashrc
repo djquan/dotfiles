@@ -6,6 +6,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$NODE_PATH
 export PATH="$PATH:$HOME/bazel/output"
 
+export RUST_SRC_PATH=/usr/local/src/rust/src
 stty -ixon
 
 alias irb='pry'

@@ -1,6 +1,6 @@
 [user]
   name = Daniel Quan
-  email = djquan@gmail.com
+  email = daniel@quan.io
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global

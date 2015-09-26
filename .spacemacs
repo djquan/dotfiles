@@ -9,17 +9,17 @@
    '(
      auto-completion
      better-defaults
+     clojure
      company-mode
-     dash
      elixir
      erlang
      emacs-lisp
      git
      html
      markdown
-     osx
      rainbow-delimiters
      ruby
+     rust
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -38,8 +38,8 @@
    dotspacemacs-startup-lists '(recents projects)
    dotspacemacs-themes '(monokai)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Inconsolata"
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -72,6 +72,7 @@
 
 (defun dotspacemacs/config ()
   (global-linum-mode)
+  (exec-path-from-shell-copy-env "RUST_SRC_PATH")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
