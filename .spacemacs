@@ -73,6 +73,7 @@
 (defun dotspacemacs/config ()
   (global-linum-mode)
   (exec-path-from-shell-copy-env "RUST_SRC_PATH")
+  (add-hook 'alchemist-mode-hook 'company-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
