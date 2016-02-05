@@ -8,7 +8,6 @@ export PATH="$PATH:$HOME/bazel/output"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 
-export RUST_SRC_PATH=/usr/local/src/rust/src
 stty -ixon
 
 alias irb='pry'
