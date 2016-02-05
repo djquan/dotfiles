@@ -68,11 +68,11 @@
    )
   ;; User initialization goes here
   (setq vc-follow-symlinks t)
+  (setq-default rust-enable-racer t)
   )
 
 (defun dotspacemacs/config ()
   (global-linum-mode)
-  (exec-path-from-shell-copy-env "RUST_SRC_PATH")
   (add-hook 'alchemist-mode-hook 'company-mode)
 )
 
