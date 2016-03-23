@@ -36,7 +36,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(recents projects)
-   dotspacemacs-themes '(monokai)
+   dotspacemacs-themes '(spacemacs-dark)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Inconsolata"
                                :size 16
@@ -66,12 +66,14 @@
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
    )
-  ;; User initialization goes here
-  (setq vc-follow-symlinks t)
-  (setq-default rust-enable-racer t)
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-init ()
+  (setq vc-follow-symlinks t)
+  (setq-default rust-enable-racer t)
+)
+
+(defun dotspacemacs/user-config ()
   (global-linum-mode)
   (add-hook 'alchemist-mode-hook 'company-mode)
 )
