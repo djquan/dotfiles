@@ -18,6 +18,7 @@
      html
      markdown
      rainbow-delimiters
+     racket
      ruby
      rust
      (shell :variables
