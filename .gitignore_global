@@ -41,3 +41,23 @@ Thumbs.db
 
 .idea/
 target/
+
+## Elixir
+/_build
+/cover
+/deps
+/doc
+erl_crash.dump
+*.ez
+
+
+# Phoenix: a web framework for Elixir
+_build/
+/db
+/deps
+/*.ez
+node_modules/
+erl_crash.dump
+/priv/static/
+/config/prod.secret.exs
+/rel

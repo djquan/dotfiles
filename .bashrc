@@ -8,6 +8,10 @@ export PATH="$PATH:$HOME/bazel/output"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 
+export GOPATH=$HOME/code/go
+
+export RUST_SRC_PATH=/usr/local/src/rust/src
+
 stty -ixon
 
 alias irb='pry'
@@ -45,3 +49,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL ]]
 
 eval "$(rbenv init -)"
+
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

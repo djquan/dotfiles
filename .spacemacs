@@ -11,9 +11,12 @@
      better-defaults
      clojure
      company-mode
+     dockerfile
      elixir
      erlang
      emacs-lisp
+     flymake-cursor
+     flymake-elixir
      git
      html
      markdown
@@ -37,7 +40,7 @@
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(recents projects)
-   dotspacemacs-themes '(spacemacs-dark)
+   dotspacemacs-themes '(monokai)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Inconsolata"
                                :size 16
