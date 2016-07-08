@@ -1,8 +1,7 @@
 export EDITOR=vim
 export NVM_DIR=~/.nvm
 
-export PATH=$PATH:usr/local/bin:~/bin:/~/bin:/usr/bin:/usr/sbin:/sbin:/bin
-export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/bin:~/bin:/~/bin:/usr/bin:/usr/sbin:/sbin:/bin
 export PATH=$PATH:$NODE_PATH
 export PATH="$PATH:$HOME/bazel/output"
 export PATH="$HOME/.rbenv/bin:$PATH"
