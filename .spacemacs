@@ -11,6 +11,7 @@
      better-defaults
      clojure
      company-mode
+     dash
      dockerfile
      elixir
      erlang
@@ -20,6 +21,7 @@
      git
      html
      markdown
+     osx
      rainbow-delimiters
      racket
      ruby
