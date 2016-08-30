@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias irb='pry'
 alias top='htop'
+alias gh='git hist'
 
 BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 
