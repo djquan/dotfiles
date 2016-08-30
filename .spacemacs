@@ -26,9 +26,6 @@
      racket
      ruby
      rust
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
      sml
      syntax-checking
      version-control
@@ -77,6 +74,7 @@
 
 (defun dotspacemacs/user-init ()
   (setq vc-follow-symlinks t)
+  (setq exec-path-from-shell-arguments '("-l"))
   (setq-default rust-enable-racer t)
 )
 
