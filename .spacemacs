@@ -81,6 +81,13 @@
 (defun dotspacemacs/user-config ()
   (global-linum-mode)
   (add-hook 'alchemist-mode-hook 'company-mode)
+  (add-to-list 'display-buffer-alist
+               `(,(rx bos "*alchemist test report*" eos)
+                 (display-buffer-reuse-window
+                  display-buffer-in-side-window)
+                 (reusable-frames . visible)
+                 (side            . right)
+                 (window-width   . 0.33)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
