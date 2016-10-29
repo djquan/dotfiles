@@ -25,7 +25,9 @@
      rainbow-delimiters
      racket
      ruby
-     rust
+     (rust :variables
+           rust-format-on-save t
+           rust-rustfmt-bin "~/.cargo/bin/rustfmt")
      sml
      syntax-checking
      version-control
