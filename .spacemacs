@@ -14,6 +14,10 @@
      dash
      dockerfile
      elixir
+     (elm :variables
+          elm-format-command "elm-format-0.17"
+          elm-sort-imports-on-save t
+          elm-format-on-save t)
      erlang
      emacs-lisp
      flymake-cursor
@@ -78,7 +82,7 @@
   (setq vc-follow-symlinks t)
   (setq exec-path-from-shell-arguments '("-l"))
   (setq-default rust-enable-racer t)
-)
+  )
 
 (defun dotspacemacs/user-config ()
   (global-linum-mode)
@@ -90,7 +94,7 @@
                  (reusable-frames . visible)
                  (side            . right)
                  (window-width   . 0.33)))
-)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
