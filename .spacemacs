@@ -10,9 +10,8 @@
      auto-completion
      better-defaults
      clojure
-     company-mode
      dash
-     dockerfile
+     docker
      elixir
      (elm :variables
           elm-format-command "elm-format-0.17"
@@ -20,13 +19,10 @@
           elm-format-on-save t)
      erlang
      emacs-lisp
-     flymake-cursor
-     flymake-elixir
      git
      html
      markdown
      osx
-     rainbow-delimiters
      racket
      ruby
      (rust :variables
