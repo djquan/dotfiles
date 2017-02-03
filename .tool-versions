@@ -2,6 +2,6 @@ clojure 1.8.0
 ruby 2.4.0
 elixir 1.4.0
 elm 0.18.0
-node 7.5.0
+nodejs 7.5.0
 rust 1.15.0
 erlang 19.2
