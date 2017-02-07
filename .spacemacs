@@ -14,7 +14,7 @@
      docker
      elixir
      (elm :variables
-          elm-format-command "elm-format-0.17"
+          elm-format-command "elm-format-0.18"
           elm-sort-imports-on-save t
           elm-format-on-save t)
      erlang
@@ -91,6 +91,5 @@
                  (side            . right)
                  (window-width   . 0.33)))
   )
-
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
