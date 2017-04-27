@@ -3,6 +3,6 @@ ruby 2.4.0
 elixir 1.4.0
 elm 0.18.0
 nodejs 7.5.0
-rust 1.16.0
+rust 1.17.0
 erlang 19.2
 python 2.7.13
