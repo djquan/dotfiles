@@ -10,7 +10,6 @@
      auto-completion
      better-defaults
      clojure
-     dash
      docker
      elixir
      (elm :variables
@@ -22,7 +21,6 @@
      git
      html
      markdown
-     osx
      racket
      ruby
      (rust :variables
@@ -79,6 +77,7 @@
   (setq vc-follow-symlinks t)
   (setq exec-path-from-shell-arguments '("-l"))
   (setq-default rust-enable-racer t)
+  (setq tramp-ssh-controlmaster-options"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   )
 
 (defun dotspacemacs/user-config ()
