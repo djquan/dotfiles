@@ -7,6 +7,7 @@ plugins=(git colored-man-pages colorize copyfile history)
 source $ZSH/oh-my-zsh.sh
 
 alias gh='git hist'
+alias ta='tmux attach'
 source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  
 
 function zle-line-init zle-keymap-select {
