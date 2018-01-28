@@ -20,3 +20,5 @@ function _prompt_purs_precmd() {
   /usr/local/bin/purs precmd
 }
 add-zsh-hook precmd _prompt_purs_precmd
+
+eval "$(rbenv init -)"

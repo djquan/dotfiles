@@ -8,8 +8,6 @@
   safecrlf = true
 [github]
   user = djquan
-[init]
-  templatedir = ~/.git_template
 [alias]
   ctags = !.git/hooks/ctags
   co = checkout
