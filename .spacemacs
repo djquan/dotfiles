@@ -19,6 +19,7 @@
      erlang
      emacs-lisp
      git
+     go
      html
      markdown
      racket

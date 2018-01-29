@@ -1,7 +1,7 @@
 set nocompatible
 set relativenumber 
 set number  
-set shell=/bin/bash
+set shell=/bin/zsh
 set clipboard=unnamed
 
 filetype off
@@ -9,49 +9,45 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle'
+call plug#begin()
 
 " My Plugins
-Plugin 'epmatsw/ag.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'Townk/vim-autoclose'
-Plugin 'godlygeek/tabular'
-Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'kana/vim-textobj-user'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'bling/vim-airline'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jgdavey/vim-turbux'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails.git'
-Plugin 'scrooloose/nerdtree'
-Plugin 'benmills/vimux'
-Plugin 'benmills/vimux-golang'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'einars/js-beautify'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'spiegela/vimix'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
+Plug 'epmatsw/ag.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'Townk/vim-autoclose'
+Plug 'godlygeek/tabular'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'kana/vim-textobj-user'
+Plug 'vim-ruby/vim-ruby'
+Plug 'bling/vim-airline'
+Plug 'pangloss/vim-javascript'
+Plug 'jgdavey/vim-turbux'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'scrooloose/nerdtree'
+Plug 'benmills/vimux'
+Plug 'benmills/vimux-golang'
+Plug 'jnwhiteh/vim-golang'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'einars/js-beautify'
+Plug 'elixir-lang/vim-elixir'
+Plug 'spiegela/vimix'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+Plug 'chriskempson/base16-vim'
 
-call vundle#end() 
+call plug#end()
 " Matchit plugin 
 runtime macros/matchit.vim
 set showmode
@@ -107,9 +103,6 @@ xnoremap & :&&<CR>
 "Turns off highlighting for the most recent search "
 nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
 
-colorscheme base16-monokai
-let base16colorspace=256
-set background=dark
 set vb t_vb=     " no visual bell & flash "
 "tab switching
 map <C-t> gt
