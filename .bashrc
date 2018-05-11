@@ -9,7 +9,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-PS1='$(if [[ $? == 0 ]]; then echo "\[\e[32m\]:)"; else echo "\[\e[31m\]:("; fi)\[\e[0m\] $PWD \n$ '
+PS1='\n$(if [[ $? == 0 ]]; then echo "\[\e[1;92m\]:)"; else echo "\[\e[1;91m\]:("; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$PWD \[\e[0m\]") \n$ '
 
 LS_COLORS="ow=01;36;40" && export LS_COLORS
 
