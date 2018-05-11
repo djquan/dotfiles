@@ -23,9 +23,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GO_PATH/bin:$PATH"
 export PATH="/opt/cmake/bin:$PATH"
-# export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
-export RBENV_VERSION='2.5.0'
+export RBENV_VERSION='2.5.1'
 export skip_global_compinit=1
 
-# eval "$(~/.rbenv/bin/rbenv init -)"
+eval "$(~/.rbenv/bin/rbenv init -)"
