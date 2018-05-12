@@ -4,6 +4,9 @@ case $- in
       *) return;;
 esac
 
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
 source /etc/bash_completion.d/git-prompt
 
 HISTCONTROL=ignoreboth
