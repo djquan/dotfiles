@@ -14,7 +14,8 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-PS1='\n$(if [[ $? == 0 ]]; then echo "\[\e[1;92m\]:)"; else echo "\[\e[1;91m\]:("; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$PWD \[\e[35m\]")$(__git_ps1) \[\e[0m\]\n$ '
+PROMPT_COMMAND='hasjobs=$(jobs -p)'
+PS1='\n$(if [[ $? == 0 ]]; then echo "\[\e[1;92m\]:)"; else echo "\[\e[1;91m\]:("; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$PWD \[\e[35m\]")$(__git_ps1) ${hasjobs:+\[\e[93m\](\j)}  \[\e[0m\]\n$ '
 
 LS_COLORS="ow=01;36;40" && export LS_COLORS
 
