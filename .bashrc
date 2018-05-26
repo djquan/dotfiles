@@ -15,7 +15,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 PROMPT_COMMAND='hasjobs=$(jobs -p)'
-PS1='\n$(if [[ $? == 0 ]]; then echo "\[\e[1;92m\]:)"; else echo "\[\e[1;91m\]:("; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$PWD \[\e[35m\]")$(__git_ps1) ${hasjobs:+\[\e[93m\](\j)}  \[\e[0m\]\n\[\e[91m\]❤\[\e[0m\]  '
+PS1='\n$(if [[ $? == 0 ]]; then echo "\[\e[1;92m\]:)"; else echo "\[\e[1;91m\]:("; fi)\[\e[0m\] $(echo "\[\e[35m\][\u@\h] \[\e[1;94m\]$PWD \[\e[35m\]")$(__git_ps1) ${hasjobs:+\[\e[93m\](\j)}  \[\e[0m\]\n\[\e[91m\]❤\[\e[0m\]  '
 
 LS_COLORS="ow=01;36;40" && export LS_COLORS
 
