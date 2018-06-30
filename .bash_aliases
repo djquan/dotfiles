@@ -9,6 +9,6 @@ alias gds='git diff --staged'
 alias gst='git status'
 alias gp='git push'
 alias gpl='git pull'
-alias ga='git add -v .'
+alias ga='git add -v'
 alias gcmsg='git commit -m'
 
