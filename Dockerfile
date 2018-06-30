@@ -6,7 +6,7 @@ RUN apt-get update && \
     build-essential openssl \
     autoconf automake autotools-dev libtool xutils-dev \
     libssl-dev libreadline-dev zlib1g-dev unzip \
-    vim
+    vim tmux emacs
 
 ENV PATH="${PATH}:/root/.asdf/shims:/root/.asdf/bin"
 

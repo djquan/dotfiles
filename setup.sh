@@ -28,11 +28,22 @@ do
   asdf plugin-add $plugin || true
 done
 
-if ! type rustup > /dev/null 2>&1; then
+if ! type rustup > /dev/null 2>&1;
+then
   curl https://sh.rustup.rs -sSf | \
     sh -s -- --default-toolchain stable -y
 fi
 
 asdf plugin-update --all
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+if ! gpg -k 94AE36675C464D64BAFA68DD7434390BDBE9B9C5 > /dev/null 2>&1;
+then
+  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+fi
+
 asdf install
+
+if [ ! -d $HOME/.emacs.d ];
+then
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+fi
