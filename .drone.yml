@@ -1,0 +1,10 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: registry.quan.io/dan/devbox
+    registry: registry.quan.io
+    secrets: [ docker_username, docker_password ]
+    branches: [ master ]
+    tags:
+      - latest
+      - "${DRONE_COMMIT_SHA:0:8}"

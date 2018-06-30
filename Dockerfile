@@ -5,7 +5,8 @@ RUN apt-get update && \
     ca-certificates curl file git \
     build-essential openssl \
     autoconf automake autotools-dev libtool xutils-dev \
-    libssl-dev libreadline-dev zlib1g-dev unzip
+    libssl-dev libreadline-dev zlib1g-dev unzip \
+    vim
 
 ENV PATH="${PATH}:/root/.asdf/shims:/root/.asdf/bin"
 
