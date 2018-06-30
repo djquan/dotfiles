@@ -5,6 +5,7 @@ pipeline:
     registry: registry.quan.io
     secrets: [ docker_username, docker_password ]
     branches: [ master ]
+    net: host
     tags:
       - latest
       - "${DRONE_COMMIT_SHA:0:8}"
