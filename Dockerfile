@@ -2,12 +2,14 @@ FROM debian:stretch
 
 RUN apt-get update && \
     apt-get install -y \
-    ca-certificates curl file \
+    ca-certificates curl file git \
     build-essential openssl \
-    autoconf automake autotools-dev libtool xutils-dev
+    autoconf automake autotools-dev libtool xutils-dev \
+    libssl-dev libreadline-dev zlib1g-dev unzip
 
-# Rust
-RUN curl https://sh.rustup.rs -sSf | \
-  sh -s -- --default-toolchain stable -y
+ENV PATH="${PATH}:/root/.asdf/shims:/root/.asdf/bin"
 
-ENV PATH=/root/.cargo/bin:$PATH
+WORKDIR /root/dockerfiles
+COPY . .
+RUN rm /root/.bashrc
+RUN ./setup.sh

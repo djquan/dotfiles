@@ -32,5 +32,5 @@ export PATH="/opt/cmake/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export skip_global_compinit=1
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash

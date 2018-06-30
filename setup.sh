@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ! -d ~/.asdf ];
+if [ ! -d $HOME/.asdf ];
 then
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.0
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.5.0
 fi
 
 for file in .*
@@ -21,10 +21,18 @@ do
   fi
 done
 
-for plugin in ruby elixir clojure elm kotlin nodejs ruby racket golang java
+source $HOME/.bashrc
+
+for plugin in ruby elixir clojure elm kotlin nodejs racket golang java
 do
   asdf plugin-add $plugin || true
 done
 
+if ! type rustup > /dev/null 2>&1; then
+  curl https://sh.rustup.rs -sSf | \
+    sh -s -- --default-toolchain stable -y
+fi
+
 asdf plugin-update --all
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 asdf install
