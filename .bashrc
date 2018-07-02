@@ -24,10 +24,11 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 export EDITOR='vim'
-export GO_PATH="$HOME/code/go"
+export GOPATH="$HOME/code/go"
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
-export PATH="$GO_PATH/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="/opt/cmake/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export skip_global_compinit=1
