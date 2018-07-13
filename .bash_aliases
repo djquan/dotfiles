@@ -1,6 +1,5 @@
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -lah'
+alias ll='ls -alh'
+alias l='ls -lh'
 
 alias gh='git hist'
 alias g='git'
