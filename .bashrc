@@ -1,3 +1,5 @@
+source $HOME/.asdf/asdf.sh
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -32,6 +34,4 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="/opt/cmake/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export skip_global_compinit=1
-
-source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
