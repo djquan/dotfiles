@@ -1,5 +1,16 @@
 #!/bin/bash
 
+if type sudo > /dev/null 2>&1;
+then
+  sudo apt-get update && \
+    sudo apt-get install -y \
+    ca-certificates curl file git \
+    build-essential openssl \
+    autoconf automake autotools-dev libtool xutils-dev \
+    libssl-dev libreadline-dev zlib1g-dev unzip \
+    vim tmux emacs25
+fi
+
 if [ ! -d $HOME/.asdf ];
 then
   git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.5.0
