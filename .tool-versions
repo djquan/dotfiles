@@ -1,9 +1,8 @@
 ruby 2.5.1
+java oracle-10.0.2
 elixir 1.6.6
-java 8.172
 clojure 1.9.0
 nodejs 8.11.3
 elm 0.18.0
 kotlin 1.2.50
-racket 6.12
 golang 1.10
