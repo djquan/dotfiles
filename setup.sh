@@ -8,7 +8,7 @@ then
     build-essential openssl \
     autoconf automake autotools-dev libtool xutils-dev \
     libssl-dev libreadline-dev zlib1g-dev unzip \
-    vim tmux emacs25
+    vim tmux emacs25 traceroute net-tools
 fi
 
 if [ -f $HOME/.bashrc ];
