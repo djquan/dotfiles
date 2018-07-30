@@ -8,7 +8,7 @@ then
     build-essential openssl \
     autoconf automake autotools-dev libtool xutils-dev \
     libssl-dev libreadline-dev zlib1g-dev unzip \
-    vim tmux emacs
+    vim tmux emacs25
 fi
 
 if [ -f $HOME/.bashrc ];
@@ -39,7 +39,7 @@ done
 
 source $HOME/.bashrc
 
-for plugin in ruby elixir clojure elm kotlin nodejs golang java
+for plugin in ruby elixir clojure elm kotlin nodejs racket golang java
 do
   asdf plugin-add $plugin || true
 done
