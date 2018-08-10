@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S unzip git gnupg
+sudo pacman -S unzip git gnupg emacs
 
 if [ -f $HOME/.bashrc ];
 then
