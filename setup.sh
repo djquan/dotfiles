@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo pacman -S unzip git gnupg
+
 if [ -f $HOME/.bashrc ];
 then
   mv $HOME/.bashrc $HOME/.bashrc-old
