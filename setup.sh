@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo pacman -S unzip git gnupg emacs
-
 if [ -f $HOME/.bashrc ];
 then
   mv $HOME/.bashrc $HOME/.bashrc-old
@@ -49,8 +47,3 @@ then
 fi
 
 asdf install
-
-if [ ! -d $HOME/.emacs.d ];
-then
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-fi

@@ -9,7 +9,7 @@ esac
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
-source /usr/share/git/completion/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-prompt.sh
 
 HISTCONTROL=ignoreboth
 shopt -s histappend
