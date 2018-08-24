@@ -27,7 +27,7 @@ fi
 
 export HASTE_SERVER='https://paste.quan.io'
 export EDITOR='vim'
-export GOPATH="$HOME/code/go"
+export GOPATH="$HOME/Code/go"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"

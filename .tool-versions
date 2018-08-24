@@ -6,4 +6,4 @@ nodejs 8.11.3
 elm 0.18.0
 kotlin 1.2.50
 racket 6.12
-golang 1.10
+golang 1.11
