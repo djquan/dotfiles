@@ -19,6 +19,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'dag/vim-fish'
 
 call plug#end()
 " Matchit plugin 
