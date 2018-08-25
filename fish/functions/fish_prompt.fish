@@ -24,5 +24,7 @@ function fish_prompt --description 'Write out the prompt'
 
     set_color red
     echo ""
-    echo "❤  "
+    echo -n "❤  "
+
+    set_color white
 end
