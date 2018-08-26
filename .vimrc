@@ -20,6 +20,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'dag/vim-fish'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 " Matchit plugin 
