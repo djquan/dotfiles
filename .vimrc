@@ -92,5 +92,4 @@ nmap <Leader>v :vsp $MYVIMRC<CR>
 
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <Leader>b :CtrlPBuffer<CR>
-
 let g:ctrlp_show_hidden = 1
