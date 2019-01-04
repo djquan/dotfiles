@@ -11,71 +11,51 @@ set shell=/bin/bash
 set clipboard=unnamed
 
 call plug#begin()
-
-" My Plugins
-Plug 'kien/ctrlp.vim'
-Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'dag/vim-fish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-sensible'
+Plug 'kien/ctrlp.vim'
+Plug 'Townk/vim-autoclose'
 Plug 'christoomey/vim-tmux-navigator'
-
+Plug 'chriskempson/base16-vim'
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'maralla/completor.vim'
+Plug 'janko-m/vim-test'
+Plug 'mbbill/undotree'
+Plug 'fatih/vim-go'
+Plug 'vim-ruby/vim-ruby'
+Plug 'rust-lang/rust.vim'
 call plug#end()
-" Matchit plugin 
-runtime macros/matchit.vim
+
 set showmode
 set mouse=a
-set ttimeoutlen=100
-set backspace=indent,eol,start    " Intuitive backspacing.
 set hidden 
-set autoindent
-set wildmenu
-set wildmode=list:longest
-
-set history=200
 set ignorecase
 set smartcase
-
-set ruler
-
-set incsearch
 set hlsearch
-
-set scrolloff=3
 set wrap
 set linebreak
-
 set title
-
 set nobackup
 set nowritebackup
-" set directory=$HOME/.vim/tmp//,.  
-
 set tabstop=2
 set softtabstop=2 
 set shiftwidth=2
 set expandtab
-
-set laststatus=2
 set cursorline
 
-"Replace & with &&; see tip 92 in Practical Vim"
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
-"Turns off highlighting for the most recent search "
-nnoremap <Leader>l :<C-u>nohlsearch<CR><C-l> 
-
 set vb t_vb=     " no visual bell & flash "
-"tab switching
 map <C-t> gt
 
-" adds dot command to visual mode "
 vnoremap . :norm.<CR>
-
-"Easy expansion of file path"
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 map <C-s> <esc>:w<CR>
@@ -93,3 +73,18 @@ nmap <Leader>v :vsp $MYVIMRC<CR>
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
+
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-monokai
+
+nmap <Leader>nt :NERDTreeToggle<cr>
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+let test#strategy = "dispatch"
+
+nmap <Leader>ut : UndotreeToggle<CR>
