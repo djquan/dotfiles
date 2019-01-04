@@ -6,6 +6,12 @@ case $- in
       *) return;;
 esac
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
@@ -36,3 +42,4 @@ export PATH="/opt/cmake/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export skip_global_compinit=1
 source $HOME/.asdf/completions/asdf.bash
+

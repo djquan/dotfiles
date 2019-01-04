@@ -11,3 +11,5 @@ alias gpl='git pull'
 alias ga='git add -v'
 alias gcmsg='git commit -m'
 
+
+alias vim='nvim'
