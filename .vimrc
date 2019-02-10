@@ -68,7 +68,7 @@ if has("autocmd")
 endif
 
 "Leader - v to open sourcefile
-nmap <Leader>v :vsp $MYVIMRC<CR>
+nmap <Leader>v :vsp ~/.vimrc<CR>
 
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <Leader>b :CtrlPBuffer<CR>
@@ -88,3 +88,11 @@ nmap <silent> t<C-g> :TestVisit<CR>
 let test#strategy = "dispatch"
 
 nmap <Leader>ut : UndotreeToggle<CR>
+
+map <silent> <LocalLeader>nh :nohls<CR>
+map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
+
+
+let g:ale_enabled = 1                     " Disable linting by default
+let g:ale_lint_on_text_changed = 'normal' " Only lint while in normal mode
+let g:ale_lint_on_insert_leave = 1        " Automatically lint when leaving insert mode
