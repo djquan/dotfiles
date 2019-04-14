@@ -31,7 +31,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export HASTE_SERVER='https://paste.quan.io'
 export EDITOR='vim'
 export GOPATH="$HOME/Code/go"
 
