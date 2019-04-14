@@ -1,7 +1,6 @@
-golang 1.11
+golang 1.12.3
 ruby 2.6.0
-elixir 1.7.4
+elixir 1.8.0
 java openjdk-11.0.1
-clojure 1.9.0
-nodejs 8.11.3
-kotlin 1.2.50
+nodejs 10.15.3
+erlang 21.3

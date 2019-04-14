@@ -43,3 +43,4 @@ export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/l
 export skip_global_compinit=1
 source $HOME/.asdf/completions/asdf.bash
 
+export ERL_AFLAGS="-kernel shell_history enabled"

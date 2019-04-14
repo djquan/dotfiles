@@ -30,6 +30,8 @@ Plug 'mbbill/undotree'
 Plug 'fatih/vim-go'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rust-lang/rust.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
 call plug#end()
 
 set showmode
@@ -96,3 +98,5 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 let g:ale_enabled = 1                     " Disable linting by default
 let g:ale_lint_on_text_changed = 'normal' " Only lint while in normal mode
 let g:ale_lint_on_insert_leave = 1        " Automatically lint when leaving insert mode
+
+let g:mix_format_on_save = 1
