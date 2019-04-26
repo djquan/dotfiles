@@ -28,7 +28,7 @@ done
 
 source $HOME/.bashrc
 
-for plugin in ruby elixir clojure elm kotlin nodejs racket golang java
+for plugin in ruby elixir clojure elm kotlin nodejs racket golang java erlang
 do
   asdf plugin-add $plugin || true
 done
