@@ -20,7 +20,7 @@ Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'chriskempson/base16-vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
@@ -76,8 +76,7 @@ let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-monokai
+colorscheme molokai
 
 nmap <Leader>nt :NERDTreeToggle<cr>
 let g:NERDTreeNodeDelimiter = "\u00a0"
