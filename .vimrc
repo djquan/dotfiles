@@ -32,6 +32,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
+Plug 'slashmili/alchemist.vim'
 call plug#end()
 
 set showmode
