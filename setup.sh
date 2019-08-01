@@ -41,9 +41,6 @@ fi
 
 asdf plugin-update --all
 
-if ! gpg -k 94AE36675C464D64BAFA68DD7434390BDBE9B9C5 > /dev/null 2>&1;
-then
-  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-fi
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
 asdf install
