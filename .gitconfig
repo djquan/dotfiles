@@ -1,6 +1,6 @@
 [user]
   name = Dan Quan
-  email = daniel@quan.io
+  email = dan@quan.io
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
@@ -23,5 +23,5 @@
 [push]
   default = simple
 [pager]
-  diff = diff-so-fancy | less --tabs=1,5 -RFX
-  show = diff-so-fancy | less --tabs=1,5 -RFX
+  diff = diff-so-fancy | less --tabs=1,5 -FX
+  show = diff-so-fancy | less --tabs=1,5 -FX
