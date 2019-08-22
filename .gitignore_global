@@ -64,4 +64,6 @@ erl_crash.dump
 
 #vscode
 
-/.vscode/
+TEST_LAST
+
+.elixir_ls/

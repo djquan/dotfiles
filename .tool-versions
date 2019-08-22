@@ -2,4 +2,5 @@ golang 1.12.7
 ruby 2.6.3
 elixir 1.9.0
 nodejs 10.15.3
-erlang 21.3
+erlang 22.0
+java openjdk-11.0.1
