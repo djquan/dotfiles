@@ -11,6 +11,8 @@ alias gp='git push'
 alias gpl='git pull'
 alias ga='git add -v'
 alias gcmsg='git commit -m'
+alias kubeon='kube_ps on'
+alias kubeoff='kube_ps off'
 
 alias kns='kubens'
 alias kctx='kubectx'
@@ -34,6 +36,9 @@ function fish_prompt
     printf '%s' (prompt_pwd)
     set_color white
     printf '%s' (__fish_git_prompt)
+
+    set_color blue
+    printf '%s' (__kube_prompt)
 
     if jobs > /dev/null
         set_color bryellow
