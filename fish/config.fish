@@ -37,11 +37,11 @@ function fish_prompt
     set_color white
     printf '%s' (__fish_git_prompt)
 
-    set_color blue
+    set_color bryellow
     printf '%s' (__kube_prompt)
 
     if jobs > /dev/null
-        set_color bryellow
+        set_color red
         printf " (%s)" (jobs -c | wc -l | tr -d " ")
         set_color white
     end
