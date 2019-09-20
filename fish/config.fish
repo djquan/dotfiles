@@ -16,6 +16,7 @@ alias kubeoff='kube_ps off'
 
 alias kns='kubens'
 alias kctx='kubectx'
+alias kres='kubectl describe node | grep -A3 Resource'
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
