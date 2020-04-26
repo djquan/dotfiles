@@ -1,6 +1,15 @@
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
-source /usr/local/etc/bash_completion.d/git-prompt.sh
+
+
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
+fi
+
+if [ -f /etc/bash_completion.d/git-prompt ]; then
+  source /etc/bash_completion.d/git-prompt
+fi
+
 
 # If not running interactively, don't do anything
 case $- in
