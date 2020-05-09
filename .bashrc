@@ -10,6 +10,10 @@ if [ -f /etc/bash_completion.d/git-prompt ]; then
   source /etc/bash_completion.d/git-prompt
 fi
 
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+  source /usr/share/git/completion/git-prompt.sh
+fi
+
 
 # If not running interactively, don't do anything
 case $- in
