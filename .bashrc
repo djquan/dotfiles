@@ -49,3 +49,5 @@ PS1='\n$(if [[ $? == 0 ]]; then echo "😃"; else echo "😦"; fi)\[\e[0m\] $(ec
 LS_COLORS="ow=01;36;40" && export LS_COLORS
 
 [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
+
+. ~/.asdf/plugins/java/set-java-home.bash
