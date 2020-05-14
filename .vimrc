@@ -15,7 +15,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
@@ -148,4 +147,3 @@ let g:go_info_mode='gopls'
 let g:go_play_open_browser = 0
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
-
