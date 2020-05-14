@@ -51,3 +51,4 @@ LS_COLORS="ow=01;36;40" && export LS_COLORS
 [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
 
 . ~/.asdf/plugins/java/set-java-home.bash
+stty -ixon
