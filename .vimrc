@@ -88,6 +88,8 @@ if has("termguicolors")
 endif
 
 nmap <Leader>nt :NERDTreeToggle<cr>
+map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+map <silent> <LocalLeader>nr :NERDTree<CR>
 
 nmap <leader>tn :TestNearest<CR>
 nmap <leader>tf :TestFile<CR>
