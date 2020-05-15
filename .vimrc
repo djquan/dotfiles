@@ -81,7 +81,7 @@ let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <leader>B :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 
-colorscheme base16-material-darker
+colorscheme base16-monokai
 let base16colorspace=256
 if has("termguicolors")
   set termguicolors
