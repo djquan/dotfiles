@@ -2,7 +2,7 @@ source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
 export EDITOR='vim'
-export GOPATH="$HOME/Code/go"
+export GOPATH="$HOME/code/go"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"

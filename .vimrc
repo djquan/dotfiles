@@ -17,6 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
 Plug 'kien/ctrlp.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'christoomey/vim-tmux-navigator'
@@ -77,18 +78,20 @@ endif
 nmap <Leader>v :e ~/.vimrc<CR>
 
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
-map <C-b> :CtrlPBuffer<CR>
+map <leader>B :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 
 colorscheme molokai
 
 nmap <Leader>nt :NERDTreeToggle<cr>
 
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+nmap <leader>tn :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>tt :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
+
+let test#strategy = "dispatch"
 
 nmap <Leader>ut : UndotreeToggle<CR>
 
@@ -105,10 +108,6 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-let g:go_list_type = "quickfix"
-
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
@@ -119,8 +118,19 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <leader>gR <Plug>(go-referrers)
+autocmd FileType go nmap <leader>gC <Plug>(go-callers)
+autocmd FileType go nmap <leader>gr  <Plug>(go-run)
+autocmd FileType go nmap <leader>gd :GoDecls<cr>
+autocmd FileType go nmap <leader>gD :GoDeclsDir<cr>
+autocmd FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
@@ -133,16 +143,13 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
-
-autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 let g:go_auto_type_info = 1
-set updatetime=100
 let g:go_rename_command = "gopls"
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
-let g:go_play_open_browser = 0
+let g:go_fmt_fail_silently = 1
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
+set updatetime=100
+
+let g:dispatch_no_maps = 1
