@@ -21,7 +21,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'kien/ctrlp.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
@@ -81,7 +81,11 @@ let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <leader>B :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 
-colorscheme molokai
+colorscheme base16-monokai
+let base16colorspace=256
+if has("termguicolors")
+  set termguicolors
+endif
 
 nmap <Leader>nt :NERDTreeToggle<cr>
 
