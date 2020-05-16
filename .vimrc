@@ -26,7 +26,6 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'maralla/completor.vim'
 Plug 'janko-m/vim-test'
 Plug 'mbbill/undotree'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -155,7 +154,8 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_fail_silently = 1
 
-au filetype go inoremap <buffer> . .<C-x><C-o>
+set completeopt-=preview
+
 set updatetime=100
 
 let g:dispatch_no_maps = 1
