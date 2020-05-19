@@ -36,6 +36,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'slashmili/alchemist.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 set showmode
@@ -155,6 +156,7 @@ let g:go_info_mode='gopls'
 let g:go_fmt_fail_silently = 1
 
 set completeopt-=preview
+set completeopt=longest,menuone
 
 set updatetime=100
 
