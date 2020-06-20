@@ -20,6 +20,8 @@
   ds = diff --staged
 [color]
   ui = true
+[pull]
+  rebase = true
 [push]
   default = simple
 [pager]
