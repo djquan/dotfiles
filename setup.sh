@@ -7,7 +7,7 @@ fi
 
 if [ ! -d $HOME/.asdf ];
 then
-  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.5.0
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
 fi
 
 for file in .*
