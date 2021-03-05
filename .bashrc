@@ -27,6 +27,7 @@ if [ -f /usr/share/git/completion/git-prompt.sh ]; then
   source /usr/share/git/completion/git-prompt.sh
 fi
 
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # If not running interactively, don't do anything
 case $- in
@@ -44,16 +45,14 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 PROMPT_COMMAND='hasjobs=$(jobs -p)'
-PS1='\n$(if [[ $? == 0 ]]; then echo "😃"; else echo "😦"; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$(dirs)\[\e[92m\]") (\u@\h)\[\e[0m\]\[\e[35m\]$(__git_ps1) \[\e[0m\]${hasjobs:+\[\e[93m\](\j)}\[\e[0m\]\n\[\e[92m\]->\[\e[0m\] '
+PS1='\n$(if [[ $? == 0 ]]; then echo "😃"; else echo "😦"; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$(dirs)\[\e[92m\]")\[\e[0m\]\[\e[35m\]$(__git_ps1) \[\e[0m\]${hasjobs:+\[\e[93m\](\j)}\[\e[0m\]\n\[\e[92m\]->\[\e[0m\] '
 
 LS_COLORS="ow=01;36;40" && export LS_COLORS
 
 [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
 
-. ~/.asdf/plugins/java/set-java-home.bash
 stty -ixon
 
-# Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \

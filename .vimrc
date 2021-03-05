@@ -35,9 +35,10 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'slashmili/alchemist.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 call plug#end()
+
+let base16colorspace=256
+colorscheme base16-material-darker
 
 set showmode
 set mouse=a
@@ -81,11 +82,7 @@ let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <leader>B :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 
-colorscheme base16-material-darker
-let base16colorspace=256
-if has("termguicolors")
-  set termguicolors
-endif
+set termguicolors
 
 nmap <Leader>nt :NERDTreeToggle<cr>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
