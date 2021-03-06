@@ -9,38 +9,6 @@ set relativenumber
 set number  
 set shell=/bin/bash
 set clipboard=unnamed
-
-call plug#begin()
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
-Plug 'kien/ctrlp.vim'
-Plug 'Townk/vim-autoclose'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'w0rp/ale'
-Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'janko-m/vim-test'
-Plug 'mbbill/undotree'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'vim-ruby/vim-ruby'
-Plug 'rust-lang/rust.vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format'
-Plug 'slashmili/alchemist.vim'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'joshdick/onedark.vim' 
-
-call plug#end()
-
-syntax on
-colorscheme onedark
-
 set showmode
 set mouse=a
 set hidden 
@@ -57,6 +25,40 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set cursorline
+set termguicolors
+set completeopt-=preview
+set completeopt=longest,menuone
+set updatetime=100
+
+call plug#begin()
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-dispatch'
+  Plug 'kien/ctrlp.vim'
+  Plug 'Townk/vim-autoclose'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'w0rp/ale'
+  Plug 'vim-airline/vim-airline'
+  Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'janko-m/vim-test'
+  Plug 'mbbill/undotree'
+  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'rust-lang/rust.vim'
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'mhinz/vim-mix-format'
+  Plug 'slashmili/alchemist.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'joshdick/onedark.vim' 
+call plug#end()
+
+syntax on
+colorscheme onedark
 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
@@ -82,8 +84,6 @@ nmap <Leader>v :e ~/.vimrc<CR>
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <leader>B :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
-
-set termguicolors
 
 nmap <Leader>nt :NERDTreeToggle<cr>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
@@ -153,9 +153,5 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_fail_silently = 1
 
-set completeopt-=preview
-set completeopt=longest,menuone
-
-set updatetime=100
 
 let g:dispatch_no_maps = 1
