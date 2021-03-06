@@ -25,10 +25,13 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set cursorline
-set termguicolors
 set completeopt-=preview
 set completeopt=longest,menuone
 set updatetime=100
+
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 call plug#begin()
   Plug 'tpope/vim-endwise'
@@ -58,6 +61,8 @@ call plug#begin()
 call plug#end()
 
 syntax on
+let g:onedark_hide_endofbuffer = 1
+let g:onedark_termcolors = 256
 colorscheme onedark
 
 nnoremap & :&&<CR>
