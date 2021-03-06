@@ -21,7 +21,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'kien/ctrlp.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
@@ -35,10 +34,12 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'slashmili/alchemist.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'joshdick/onedark.vim' 
+
 call plug#end()
 
-let base16colorspace=256
-colorscheme base16-material-darker
+syntax on
+colorscheme onedark
 
 set showmode
 set mouse=a
