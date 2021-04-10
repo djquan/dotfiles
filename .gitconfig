@@ -27,3 +27,5 @@
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -FX
   show = diff-so-fancy | less --tabs=1,5 -FX
+[init]
+	defaultBranch = main
