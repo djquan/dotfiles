@@ -49,7 +49,6 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'SirVer/ultisnips'
   Plug 'janko-m/vim-test'
   Plug 'mbbill/undotree'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
