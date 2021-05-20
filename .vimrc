@@ -28,6 +28,7 @@ set cursorline
 set completeopt-=preview
 set completeopt=longest,menuone
 set updatetime=100
+set autowrite
 
 if (has("termguicolors"))
   set termguicolors
@@ -48,9 +49,11 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'SirVer/ultisnips'
   Plug 'janko-m/vim-test'
   Plug 'mbbill/undotree'
-  Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'vim-ruby/vim-ruby'
   Plug 'rust-lang/rust.vim'
   Plug 'elixir-editors/vim-elixir'
@@ -58,6 +61,7 @@ call plug#begin()
   Plug 'slashmili/alchemist.vim'
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'joshdick/onedark.vim' 
+  Plug 'ruby-formatter/rufo-vim'
 call plug#end()
 
 syntax on
@@ -117,6 +121,9 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
+
+nnoremap <leader>at :ALEToggle<CR>
+
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
@@ -129,7 +136,7 @@ endfunction
 
 autocmd FileType go nmap <leader>gR <Plug>(go-referrers)
 autocmd FileType go nmap <leader>gC <Plug>(go-callers)
-autocmd FileType go nmap <leader>gr  <Plug>(go-run)
+autocmd FileType go nmap <leader>gr <Plug>(go-run)
 autocmd FileType go nmap <leader>gd :GoDecls<cr>
 autocmd FileType go nmap <leader>gD :GoDeclsDir<cr>
 autocmd FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
@@ -160,3 +167,7 @@ let g:go_fmt_fail_silently = 1
 
 
 let g:dispatch_no_maps = 1
+
+" Enable rufo (RUby FOrmat)
+let g:rufo_auto_formatting = 1
+let g:pymode_python = 'python3'
