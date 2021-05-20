@@ -27,6 +27,7 @@ if [ -f /usr/share/git/completion/git-prompt.sh ]; then
   source /usr/share/git/completion/git-prompt.sh
 fi
 
+[[ -r "/opt/homebrew/etc/bash_completion" ]] && . "/opt/homebrew/etc/bash_completion"
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # If not running interactively, don't do anything
@@ -38,6 +39,7 @@ esac
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
+export SHELL_SESSION_HISTORY=0
 
 HISTCONTROL=ignoreboth
 shopt -s histappend
