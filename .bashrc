@@ -59,3 +59,5 @@ LS_COLORS="ow=01;36;40" && export LS_COLORS
 stty -ixon
 
 source "$HOME/.cargo/env"
+
+source ~/.config/broot/launcher/bash/br
