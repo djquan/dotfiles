@@ -66,6 +66,7 @@ call plug#begin()
   Plug 'slashmili/alchemist.vim'
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'ruby-formatter/rufo-vim'
+  Plug 'airblade/vim-gitgutter'
   Plug 'phanviet/vim-monokai-pro'
 call plug#end()
 
@@ -167,7 +168,6 @@ let g:go_rename_command = "gopls"
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_fail_silently = 1
-
 
 let g:dispatch_no_maps = 1
 

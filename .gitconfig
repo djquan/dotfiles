@@ -1,13 +1,16 @@
 [user]
   name = Dan Quan
   email = dan@quan.io
+
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
   autocrlf = false
   safecrlf = true
+
 [github]
   user = djquan
+
 [alias]
   ctags = !.git/hooks/ctags
   co = checkout
@@ -18,14 +21,29 @@
   type = cat-file -t
   dump = cat-file -p
   ds = diff --staged
+
 [color]
   ui = true
 [pull]
   rebase = true
 [push]
   default = simple
-[pager]
-  diff = diff-so-fancy | less --tabs=1,5 -FX
-  show = diff-so-fancy | less --tabs=1,5 -FX
+
 [init]
 	defaultBranch = main
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only
