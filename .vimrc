@@ -29,8 +29,14 @@ set completeopt-=preview
 set completeopt=longest,menuone
 set updatetime=100
 set autowrite
+set background=dark
+
 
 if (has("termguicolors"))
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set background=dark
+  set t_Co=256
   set termguicolors
 endif
 
@@ -59,14 +65,12 @@ call plug#begin()
   Plug 'mhinz/vim-mix-format'
   Plug 'slashmili/alchemist.vim'
   Plug 'AndrewRadev/splitjoin.vim'
-  Plug 'joshdick/onedark.vim' 
   Plug 'ruby-formatter/rufo-vim'
+  Plug 'phanviet/vim-monokai-pro'
 call plug#end()
 
 syntax on
-let g:onedark_hide_endofbuffer = 1
-let g:onedark_termcolors = 256
-colorscheme onedark
+colorscheme monokai_pro
 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>

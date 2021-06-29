@@ -1,5 +1,5 @@
-alias ll='ls -alh'
-alias l='ls -lh'
+alias ll='exa -alh'
+alias l='exa -lh'
 
 alias gh='git hist'
 alias g='git'
@@ -15,6 +15,7 @@ alias kns='kubens'
 alias kctx='kubectx'
 
 alias reliex='iex --name $(whoami)@127.0.0.1 --cookie $(kubectl get secret release -o "go-template={{index .data \"release_cookie\"}}" | base64 -D) '
+alias nv='nvim'
 
 if hash batcat 2>/dev/null; then
   alias bat='batcat'
