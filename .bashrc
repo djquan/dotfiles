@@ -61,3 +61,4 @@ stty -ixon
 source "$HOME/.cargo/env"
 
 source ~/.config/broot/launcher/bash/br
+eval "$(starship init bash)"
