@@ -1,6 +1,8 @@
 alias ll='exa -alh'
 alias l='exa -lh'
 
+alias cdc='cd ~/code'
+
 alias gh='git hist'
 alias g='git'
 alias gd='git diff'
