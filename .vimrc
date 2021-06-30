@@ -5,13 +5,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 set nocompatible
-set relativenumber 
-set number  
+set relativenumber
+set number
 set shell=/bin/bash
 set clipboard=unnamed
 set showmode
 set mouse=a
-set hidden 
+set hidden
 set ignorecase
 set smartcase
 set hlsearch
@@ -21,7 +21,7 @@ set title
 set nobackup
 set nowritebackup
 set tabstop=2
-set softtabstop=2 
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set cursorline
