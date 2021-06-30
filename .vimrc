@@ -67,6 +67,7 @@ call plug#begin()
   Plug 'ruby-formatter/rufo-vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'morhetz/gruvbox'
+  Plug 'preservim/vimux'
 call plug#end()
 
 syntax on
@@ -95,7 +96,7 @@ endif
 nmap <Leader>v :e ~/.vimrc<CR>
 
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
-map <leader>B :CtrlPBuffer<CR>
+map <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 
 nmap <Leader>nt :NERDTreeToggle<cr>
@@ -108,7 +109,7 @@ nmap <leader>tt :TestSuite<CR>
 nmap <leader>tl :TestLast<CR>
 nmap <leader>tv :TestVisit<CR>
 
-let test#strategy = "dispatch"
+let test#strategy = "vimux"
 
 nmap <Leader>ut : UndotreeToggle<CR>
 
