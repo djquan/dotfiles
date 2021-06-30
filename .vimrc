@@ -68,6 +68,7 @@ call plug#begin()
   Plug 'airblade/vim-gitgutter'
   Plug 'morhetz/gruvbox'
   Plug 'preservim/vimux'
+  Plug 'rizzatti/dash.vim'
 call plug#end()
 
 syntax on
@@ -115,6 +116,8 @@ nmap <Leader>ut : UndotreeToggle<CR>
 
 map <silent> <LocalLeader>nh :nohls<CR>
 map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
+
+let g:airline_powerline_fonts = 1
 
 let g:ale_enabled = 1
 let g:ale_lint_on_text_changed = 'normal'
