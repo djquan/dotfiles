@@ -52,6 +52,7 @@ call plug#begin()
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'w0rp/ale'
   Plug 'vim-airline/vim-airline'
+  Plug 'edkolev/tmuxline.vim'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'janko-m/vim-test'
