@@ -73,7 +73,6 @@ call plug#begin()
 call plug#end()
 
 syntax on
-let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 
 nnoremap & :&&<CR>
