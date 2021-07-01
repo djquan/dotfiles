@@ -24,3 +24,4 @@ if hash batcat 2>/dev/null; then
 fi
 
 alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias vim="nvim"
