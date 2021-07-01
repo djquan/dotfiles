@@ -62,7 +62,8 @@ stty -ixon
 
 source "$HOME/.cargo/env"
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --color=always'
+export FZF_DEFAULT_OPTS="--ansi"
 
 source ~/.config/broot/launcher/bash/br
 eval "$(starship init bash)"
