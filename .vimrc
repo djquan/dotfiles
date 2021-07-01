@@ -47,7 +47,7 @@ call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-dispatch'
-  Plug 'kien/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'Townk/vim-autoclose'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'w0rp/ale'
