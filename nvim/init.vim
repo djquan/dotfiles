@@ -7,6 +7,38 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+set relativenumber
+set number
+set shell=/bin/bash
+set clipboard=unnamed
+set showmode
+set hidden
+set ignorecase
+set smartcase
+set hlsearch
+set wrap
+set linebreak
+set nohlsearch
+set title
+set nobackup
+set nowritebackup
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set cursorline
+set completeopt=menuone,noselect
+set updatetime=100
+set autowrite
+set background=dark
+set noswapfile
+set undodir=~/.vim/undodir
+set undofile
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=99
+set termguicolors
+
 call plug#begin()
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-commentary'
@@ -57,3 +89,134 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 let g:airline_powerline_fonts = 1
 
 nmap <Leader>ut : UndotreeToggle<CR>
+
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.resolve_timeout = 800
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+let g:compe.source = {}
+let g:compe.source.path = v:true
+let g:compe.source.buffer = v:true
+let g:compe.source.calc = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:true
+let g:compe.source.vsnip = v:true
+let g:compe.source.ultisnips = v:true
+let g:compe.source.luasnip = v:true
+let g:compe.source.emoji = v:true
+
+let g:ale_enabled = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+nnoremap <leader>at :ALEToggle<CR>
+
+lua <<EOF
+local nvim_lsp = require('lspconfig')
+nvim_lsp.rust_analyzer.setup{}
+nvim_lsp.gopls.setup{}
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+  if client.resolved_capabilities.document_formatting then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
+  end
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { "pyright", "rust_analyzer", "tsserver", "gopls" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+EOF
+
+lua <<EOF
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
+EOF
+
+nnoremap <silent> gh :Lspsaga lsp_finder<CR>
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+nnoremap <silent> gs :Lspsaga signature_help<CR>
+nnoremap <silent> gr :Lspsaga rename<CR>
+nnoremap <silent> gd :Lspsaga preview_definition<CR>
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+
+nmap <Leader>nt :NERDTreeToggle<cr>
+map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+map <silent> <LocalLeader>nr :NERDTree<CR>
+
+let g:projectionist_heuristics = {
+      \   "*.go": {
+      \     '*.go':      { 'alternate': '{}_test.go', 'type': 'source' },
+      \     '*_test.go': { 'alternate': '{}.go', 'type': 'test' }
+      \   }
+      \ }
+nnoremap <Leader>gt :A<CR>
+
+map <leader>b <cmd>Telescope buffers<cr>
+map <C-P> <cmd>Telescope find_files<cr>
+map <leader>rg <cmd>Telescope live_grep<cr>
+
+nmap <leader>tn :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>tt :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
+
+let test#strategy = "vimux"
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true
+  },
+  indent = {
+    enable = true
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "<M-k>",
+      scope_incremental = "grc",
+      node_decremental = "<M-j>",
+    },
+  },
+}
+EOF
