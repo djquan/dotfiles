@@ -30,11 +30,13 @@ set completeopt=longest,menuone
 set updatetime=100
 set autowrite
 set background=dark
+set noswapfile
+set undodir=~/.vim/undodir
+set undofile
 
 if (has("termguicolors"))
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set background=dark
   set t_Co=256
   set termguicolors
 endif
@@ -67,7 +69,7 @@ call plug#begin()
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'ruby-formatter/rufo-vim'
   Plug 'airblade/vim-gitgutter'
-  Plug 'morhetz/gruvbox'
+  Plug 'gruvbox-community/gruvbox'
   Plug 'preservim/vimux'
   Plug 'rizzatti/dash.vim'
 call plug#end()
@@ -128,7 +130,6 @@ let g:mix_format_on_save = 1
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
-
 
 nnoremap <leader>at :ALEToggle<CR>
 

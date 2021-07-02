@@ -67,3 +67,5 @@ export FZF_DEFAULT_OPTS="--ansi"
 
 source ~/.config/broot/launcher/bash/br
 eval "$(starship init bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
