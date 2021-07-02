@@ -7,13 +7,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set nocompatible
 set relativenumber
 set number
 set shell=/bin/bash
 set clipboard=unnamed
 set showmode
-set mouse=a
 set hidden
 set ignorecase
 set smartcase
@@ -37,7 +35,6 @@ set background=dark
 set noswapfile
 set undodir=~/.vim/undodir
 set undofile
-set vb t_vb=     " no visual bell & flash "
 
 if (has("termguicolors"))
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
