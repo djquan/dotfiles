@@ -92,12 +92,12 @@ imap <C-s> <esc>:w<CR>
 
 "Reloads source file on save
 if has("autocmd")
-  autocmd! bufwritepost .vimrc source $MYVIMRC
+  au BufWritePost $MYVIMRC source $MYVIMRC
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 endif
 
 "Leader - v to open sourcefile
-nmap <Leader>v :e ~/.vimrc<CR>
+nmap <Leader>v :e ~/.config/nvim/init.vim<CR>
 
 let g:ctrlp_prompt_mappings = { 'PrtClearCache()':['<c-r>'] }
 map <leader>b :CtrlPBuffer<CR>
