@@ -17,6 +17,7 @@ set smartcase
 set hlsearch
 set wrap
 set linebreak
+set nohlsearch
 set title
 set nobackup
 set nowritebackup
@@ -33,6 +34,7 @@ set background=dark
 set noswapfile
 set undodir=~/.vim/undodir
 set undofile
+set vb t_vb=     " no visual bell & flash "
 
 if (has("termguicolors"))
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -80,7 +82,6 @@ colorscheme gruvbox
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
-set vb t_vb=     " no visual bell & flash "
 map <C-t> gt
 
 vnoremap . :norm.<CR>
