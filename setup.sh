@@ -26,6 +26,9 @@ do
   fi
 done
 
+mkdir -p ~/.config/nvim/
+ln -s $(pwd)/nvim/init.vim ~/.config/nvim/init.vim
+
 source $HOME/.bashrc
 
 for plugin in ruby elixir clojure elm kotlin nodejs racket golang java erlang
