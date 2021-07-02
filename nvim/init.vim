@@ -49,7 +49,6 @@ imap <C-s> <esc>:w<CR>
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"Leader - v to open sourcefile
 nmap <Leader>v :e ~/.config/nvim/init.vim<CR>
 
 map <silent> <LocalLeader>nh :nohls<CR>
