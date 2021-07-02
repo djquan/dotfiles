@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf ~/.config/nvim || true
 mkdir -p ~/.config/nvim/
 mkdir -p ~/.config/nvim/plugin
 mkdir -p ~/.config/nvim/after/plugin
