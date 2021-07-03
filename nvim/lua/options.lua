@@ -1,5 +1,6 @@
 local options = vim.o
 local global = vim.g
+local cmd = vim.cmd
 
 options.relativenumber=true
 options.number=true
@@ -34,5 +35,5 @@ global.nohlsearch=true
 global.noswapfile=true
 global.nowritebackup=true
 
-vim.cmd("syntax on")
-vim.cmd("colorscheme gruvbox")
+cmd("syntax on")
+cmd("colorscheme gruvbox")
