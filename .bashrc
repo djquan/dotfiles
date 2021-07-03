@@ -69,3 +69,5 @@ source ~/.config/broot/launcher/bash/br
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias luamake=/Users/dan/Downloads/lua-language-server/3rd/luamake/luamake

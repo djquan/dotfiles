@@ -41,7 +41,7 @@ imap <C-s> <esc>:w<CR>
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-nmap <Leader>v :e ~/.config/nvim/init.vim<CR>
+nmap <Leader>v :e ~/dotfiles/nvim/<CR>
 
 map <silent> <LocalLeader>nh :nohls<CR>
 map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
@@ -93,3 +93,4 @@ nmap <leader>tv :TestVisit<CR>
 
 let test#strategy = "vimux"
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+autocmd BufWritePost plugins.lua PackerCompile
