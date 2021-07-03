@@ -35,9 +35,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
-  if client.resolved_capabilities.code_action.organizeImports then
-    vim.api.nvim_command [[ autocmd BufWritePre * lua organizeImports(1000) ]]
-  end
+  vim.api.nvim_command [[ autocmd BufWritePre *.go lua organizeImports(1000) ]]
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and

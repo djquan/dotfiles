@@ -47,7 +47,7 @@ call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-projectionist'
-  Plug 'Townk/vim-autoclose'
+  Plug 'jiangmiao/auto-pairs'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'w0rp/ale'
   Plug 'vim-airline/vim-airline'
