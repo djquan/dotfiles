@@ -14,7 +14,6 @@ return require('packer').startup(function()
   use 'jiangmiao/auto-pairs'
   use 'christoomey/vim-tmux-navigator'
   use 'w0rp/ale'
-  use 'vim-airline/vim-airline'
   use 'edkolev/tmuxline.vim'
   use 'preservim/nerdtree'
   use 'Xuyuanp/nerdtree-git-plugin'
@@ -31,4 +30,8 @@ return require('packer').startup(function()
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'kyazdani42/nvim-web-devicons'
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 end)

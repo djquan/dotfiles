@@ -92,3 +92,4 @@ nmap <leader>tl :TestLast<CR>
 nmap <leader>tv :TestVisit<CR>
 
 let test#strategy = "vimux"
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
