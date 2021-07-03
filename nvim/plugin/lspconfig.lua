@@ -1,7 +1,6 @@
 local nvim_lsp = require('lspconfig')
 nvim_lsp.rust_analyzer.setup{}
 nvim_lsp.gopls.setup{}
-nvim_lsp.sumneko_lua.setup{}
 
 function organizeImports(wait_ms)
   local params = vim.lsp.util.make_range_params()

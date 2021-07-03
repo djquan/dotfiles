@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sensible'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-projectionist'
-  use 'jiangmiao/auto-pairs'
   use 'christoomey/vim-tmux-navigator'
   use 'w0rp/ale'
   use 'edkolev/tmuxline.vim'

@@ -23,7 +23,6 @@ options.completeopt="menuone,noselect"
 options.updatetime=100
 options.autowrite=true
 options.background="dark"
-options.undodir="~/.vim/undodir"
 options.undofile=true
 options.foldmethod="expr"
 options.foldexpr="nvim_treesitter#foldexpr()"
@@ -37,3 +36,4 @@ global.nowritebackup=true
 
 cmd("syntax on")
 cmd("colorscheme gruvbox")
+cmd("set undodir=\"~/.vim/undodir\"") -- lua options do not expand home dir

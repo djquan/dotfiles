@@ -1,8 +1,4 @@
-vnoremap . :norm.<CR>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -10,8 +6,6 @@ nmap <Leader>v :e ~/dotfiles/nvim/<CR>
 
 map <silent> <LocalLeader>nh :nohls<CR>
 map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
-
-let g:airline_powerline_fonts = 1
 
 nmap <Leader>ut : UndotreeToggle<CR>
 
@@ -49,12 +43,6 @@ nnoremap <Leader>gt :A<CR>
 map <leader>b <cmd>Telescope buffers<cr>
 map <C-P> <cmd>Telescope find_files<cr>
 map <leader>rg <cmd>Telescope live_grep<cr>
-
-nmap <leader>tn :TestNearest<CR>
-nmap <leader>tf :TestFile<CR>
-nmap <leader>tt :TestSuite<CR>
-nmap <leader>tl :TestLast<CR>
-nmap <leader>tv :TestVisit<CR>
 
 let test#strategy = "vimux"
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
