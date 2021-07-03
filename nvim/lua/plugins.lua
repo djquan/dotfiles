@@ -4,7 +4,6 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
   use 'wbthomason/packer.nvim'
-  use 'tpope/vim-endwise'
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
@@ -34,4 +33,6 @@ return require('packer').startup(function(use)
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+  use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
 end)
