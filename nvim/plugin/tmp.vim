@@ -41,7 +41,7 @@ let g:projectionist_heuristics = {
 nnoremap <Leader>gt :A<CR>
 
 map <leader>b <cmd>Telescope buffers<cr>
-map <C-P> <cmd>Telescope find_files<cr>
+map <C-P> :lua require('telescope.builtin').find_files{ find_command = {'rg', '--files', '--hidden', "--iglob", "!.git"} }<CR>
 map <leader>rg <cmd>Telescope live_grep<cr>
 
 let test#strategy = "vimux"
