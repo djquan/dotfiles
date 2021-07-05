@@ -26,17 +26,7 @@ do
   fi
 done
 
-mkdir -p ~/.config/nvim/
-for file in nvim/*
-do
-  if [ ! -f $HOME/.config/$file ];
-  then
-    echo "Symlinking $PWD/$file to $HOME/$file"
-    ln -s $PWD/$file $HOME/.config/$file
-  else
-    cmp --silent $PWD/$file $HOME/.config/$file || echo "$HOME/.config/$file exists and is different than $PWD/$file"
-  fi
-done
+./sync_nvim.sh
 
 source $HOME/.bashrc
 
