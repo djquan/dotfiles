@@ -42,7 +42,7 @@ noremap('n', ']e', ':Lspsaga diagnostic_jump_prev<CR>')
 
 -- telescope
 map('', '<leader>b', '<cmd>Telescope buffers<cr>', {})
-map('', '<C-P>', ":lua require('telescope.builtin').find_files{ find_command = {'rg', '--files', '--hidden', '--iglob', '!.git'} }<CR>", {})
+map('', '<C-P>', "<cmd>lua require('telescope.builtin').find_files{ find_command = {'rg', '--files', '--hidden', '--iglob', '!.git'} }<CR>", {})
 map('', '<leader>rg', '<cmd>Telescope live_grep<cr>', {})
 
 -- compe
