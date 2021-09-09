@@ -12,6 +12,8 @@ export PATH="/Applications/Postgres.app/Contents/Versions/11/bin:$PATH"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/Applications/Sublime Merge.app/Contents/SharedSupport/bin:$PATH"
 
+export DESKTOPINTEGRATION=false
+
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export skip_global_compinit=1
 
