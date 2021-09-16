@@ -7,6 +7,7 @@ local cmd = vim.cmd
 noremap('v', '.', ':norm.<CR>')
 map('', '<C-s>', '<esc>:w<CR>', {})
 map('i', '<C-s>', '<esc>:w<CR>', {})
+map('i', '<C-c>', '<esc>', {})
 map('n', '<leader>v', ':e ~/dotfiles/nvim/<CR>', {})
 map('n', '<leader>nh', ':nohls<CR>', {})
 
