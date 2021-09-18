@@ -35,4 +35,5 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'rafamadriz/friendly-snippets'
   use 'mboughaba/i3config.vim'
+  use 'sebdah/vim-delve'
 end)
