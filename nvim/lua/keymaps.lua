@@ -35,11 +35,13 @@ noremap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga
 noremap('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
 noremap('n', 'gs', ':Lspsaga signature_help<CR>')
 noremap('n', 'gr', ':Lspsaga rename<CR>')
-noremap('n', 'gd', ':Lspsaga preview_definition<CR>')
 noremap('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>')
 noremap('n', '<leader>cc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
 noremap('n', '[e', ':Lspsaga diagnostic_jump_next<CR>')
 noremap('n', ']e', ':Lspsaga diagnostic_jump_prev<CR>')
+
+-- lspconfig
+noremap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 
 -- telescope
 map('', '<leader>b', '<cmd>Telescope buffers<cr>', {})
