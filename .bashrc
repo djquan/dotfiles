@@ -75,5 +75,3 @@ eval "$(starship init bash)"
 alias luamake=/Users/dan/Downloads/lua-language-server/3rd/luamake/luamake
 
 eval $(ssh-agent > /dev/null) > /dev/null
-
-[ -z "$TMUX"  ] && { tmux attach -t dev || exec tmux new-session -s dev && exit;}
