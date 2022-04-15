@@ -40,7 +40,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "tsserver", "gopls" }
+local servers = { "solargraph", "pyright", "rust_analyzer", "tsserver", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -55,7 +55,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 require'lspconfig'.sumneko_lua.setup {
-  cmd = {"/usr/bin/lua-language-server"};
+  cmd = {"/opt/homebrew/bin/lua-language-server"};
   settings = {
     Lua = {
       runtime = {

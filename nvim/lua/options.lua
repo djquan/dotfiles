@@ -35,8 +35,10 @@ global.nohlsearch=true
 global.noswapfile=true
 global.nowritebackup=true
 
+cmd("packadd! dracula_pro")
+cmd("let g:dracula_colorterm = 0")
 cmd("syntax on")
-cmd("colorscheme gruvbox")
+cmd("colorscheme dracula_pro")
 cmd("set undodir=\"~/.vim/undodir\"") -- lua options do not expand home dir
 cmd('let test#strategy = "vimux"')
 cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
