@@ -44,6 +44,9 @@ cmd('let test#strategy = "vimux"')
 cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+
+
 set_global('ale_enabled', 1)
 set_global('ale_lint_on_text_changed', 'normal')
 set_global('ale_lint_on_insert_leave', 1)

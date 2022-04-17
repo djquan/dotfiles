@@ -40,6 +40,9 @@ noremap('n', '<leader>cc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_dia
 noremap('n', '[e', ':Lspsaga diagnostic_jump_next<CR>')
 noremap('n', ']e', ':Lspsaga diagnostic_jump_prev<CR>')
 
+-- Dash
+noremap('n', '<leader>h', ':Dash<CR>')
+
 -- lspconfig
 noremap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 

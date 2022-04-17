@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
   use 'RRethy/nvim-treesitter-endwise'
-  use 'andymass/vim-matchup'
+  use {'andymass/vim-matchup', event = 'VimEnter'}
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
   use 'tami5/lspsaga.nvim'
@@ -45,7 +45,6 @@ return require('packer').startup(function(use)
 
   use 'christoomey/vim-tmux-navigator'
   use 'w0rp/ale'
-  use 'edkolev/tmuxline.vim'
   use 'preservim/nerdtree'
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'vim-test/vim-test'
@@ -56,7 +55,10 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'rafamadriz/friendly-snippets'
   use 'sebdah/vim-delve'
+
+  -- languages
   use 'vim-ruby/vim-ruby'
+  use 'ray-x/go.nvim'
 
   if Packer_bootstrap then
     require('packer').sync()
