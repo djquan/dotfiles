@@ -1,5 +1,11 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {"lua", "ruby", "elixir", "go", "ruby", "rust"},
+  endwise = {
+    enable = true,
+  },
+  matchup = {
+    enable = true,
+  },
   highlight = {
     enable = true
   },
