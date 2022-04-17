@@ -20,7 +20,7 @@ export skip_global_compinit=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export BAT_THEME="gruvbox-dark"
+export BAT_THEME="Dracula"
 
 if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
   source /usr/local/etc/bash_completion.d/git-prompt.sh
