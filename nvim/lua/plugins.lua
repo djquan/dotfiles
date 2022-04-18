@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-projectionist'
   use 'tpope/vim-rails'
+  use 'tpope/vim-rake'
   use 'tpope/vim-bundler'
 
   use 'christoomey/vim-tmux-navigator'

@@ -46,15 +46,19 @@ cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
-
 set_global('ale_enabled', 1)
 set_global('ale_lint_on_text_changed', 'normal')
 set_global('ale_lint_on_insert_leave', 1)
 
 local projectionist_heuristics = {}
 local go_heuristics = {}
-go_heuristics['*.go'] = { alternate = '{}_test.go', type = 'source' }
-go_heuristics['*_test.go'] = { alternate = '{}.go', type = 'test' }
+go_heuristics['*.go'] = {
+  alternate = '{}_test.go',
+  type = 'source'
+}
+go_heuristics['*_test.go'] = {
+  alternate = '{}.go', type = 'test'
+}
 projectionist_heuristics["*.go"] = go_heuristics
 
 set_global('projectionist_heuristics', projectionist_heuristics)
