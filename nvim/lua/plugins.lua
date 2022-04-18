@@ -22,7 +22,11 @@ return require('packer').startup(function(use)
   use 'RRethy/nvim-treesitter-endwise'
   use {'andymass/vim-matchup', event = 'VimEnter'}
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
   use 'tami5/lspsaga.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -54,6 +58,7 @@ return require('packer').startup(function(use)
   use 'preservim/vimux'
   use 'rizzatti/dash.vim'
   use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-vsnip'
   use 'rafamadriz/friendly-snippets'
   use 'sebdah/vim-delve'
 

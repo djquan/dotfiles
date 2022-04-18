@@ -1,6 +1,9 @@
 local nvim_lsp = require('lspconfig')
 nvim_lsp.rust_analyzer.setup{}
 nvim_lsp.gopls.setup{}
+nvim_lsp.elixirls.setup{
+  cmd = { "/opt/homebrew/bin/elixir-ls" }
+}
 
 function organizeImports(wait_ms)
   local params = vim.lsp.util.make_range_params()
