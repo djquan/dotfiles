@@ -2,7 +2,6 @@ local map = vim.api.nvim_set_keymap
 local function noremap(mode, keymap, command)
   map(mode, keymap, command, { noremap = true })
 end
-local cmd = vim.cmd
 
 noremap('v', '.', ':norm.<CR>')
 map('', '<C-s>', '<esc>:w<CR>', {})
@@ -50,10 +49,3 @@ noremap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 map('', '<leader>b', '<cmd>Telescope buffers<cr>', {})
 map('', '<C-P>', "<cmd>lua require('telescope.builtin').find_files{ find_command = {'rg', '--files', '--hidden', '--iglob', '!.git'} }<CR>", {})
 map('', '<leader>rg', '<cmd>Telescope live_grep<cr>', {})
-
--- -- compe
--- cmd("inoremap <silent><expr> <C-x> compe#complete()")
--- cmd("inoremap <silent><expr> <CR>      compe#confirm('<CR>')")
--- cmd("inoremap <silent><expr> <C-e>     compe#close('<C-e>')")
--- cmd("inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })")
--- cmd("inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })")
