@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use 'lewis6991/impatient.nvim'
 
   -- tpope
   use 'tpope/vim-surround'
@@ -65,11 +66,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/cmp-vsnip'
   use 'rafamadriz/friendly-snippets'
-  use 'sebdah/vim-delve'
 
   -- languages
   use 'vim-ruby/vim-ruby'
   use 'ray-x/go.nvim'
+  use 'sebdah/vim-delve'
 
   if Packer_bootstrap then
     require('packer').sync()
