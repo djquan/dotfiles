@@ -35,10 +35,13 @@ global.nohlsearch=true
 global.noswapfile=true
 global.nowritebackup=true
 
-cmd("packadd! dracula_pro")
-cmd("let g:dracula_colorterm = 0")
+global.tokyonight_style = "night"
+global.tokyonight_italic_functions = true
+global.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+
+vim.cmd[[colorscheme tokyonight]]
+
 cmd("syntax on")
-cmd("colorscheme dracula_pro")
 cmd("set undodir=\"~/.vim/undodir\"") -- lua options do not expand home dir
 cmd('let test#strategy = "vimux"')
 cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')

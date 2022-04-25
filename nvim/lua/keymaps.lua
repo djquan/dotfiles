@@ -12,9 +12,9 @@ map('n', '<leader>nh', ':nohls<CR>', {})
 
 map('n', '<leader>ut', ':UndotreeToggle<cr>', {})
 map('n', '<leader>at', ':ALEToggle<cr>', {})
-map('', '<leader>nt', ':NERDTreeToggle<cr>', {})
-map('', '<leader>nf', ':NERDTreeFind<cr>', {})
-map('', '<leader>nf', ':NERDTree<cr>', {})
+map('', '<leader>nt', ':NvimTreeToggle<cr>', {})
+map('', '<leader>nf', ':NvimTreeFindFile<cr>', {})
+map('', '<leader>nr', ':NvimTreeRefresh<cr>', {})
 
 noremap('n', '<leader>gt', ':A<CR>')
 

@@ -43,6 +43,12 @@ return require('packer').startup(function(use)
     end
   }
   use 'lewis6991/impatient.nvim'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    }
+  }
 
   -- tpope
   use 'tpope/vim-surround'
@@ -54,9 +60,9 @@ return require('packer').startup(function(use)
   use 'tpope/vim-rake'
   use 'tpope/vim-bundler'
 
+  use 'folke/tokyonight.nvim'
   use 'christoomey/vim-tmux-navigator'
   use 'w0rp/ale'
-  use 'preservim/nerdtree'
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'vim-test/vim-test'
   use 'mbbill/undotree'
