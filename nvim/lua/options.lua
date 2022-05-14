@@ -3,6 +3,7 @@ local global = vim.g
 local cmd = vim.cmd
 local set_global=vim.api.nvim_set_var
 
+options.laststatus=3
 options.relativenumber=true
 options.number=true
 options.shell="/bin/bash"
