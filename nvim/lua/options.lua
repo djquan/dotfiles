@@ -61,8 +61,22 @@ go_heuristics['*.go'] = {
   type = 'source'
 }
 go_heuristics['*_test.go'] = {
-  alternate = '{}.go', type = 'test'
+  alternate = '{}.go',
+  type = 'test'
 }
 projectionist_heuristics["*.go"] = go_heuristics
 
+local elixir_heuristics = {}
+elixir_heuristics['lib/*.ex'] = {
+  alternate = 'test/{}_test.exs',
+  type = 'source'
+}
+
+elixir_heuristics['test/*_test.exs'] = {
+  alternate = 'lib/{}.ex',
+  type = 'test'
+}
+
+projectionist_heuristics["*.ex"] = elixir_heuristics
+projectionist_heuristics["*.exs"] = elixir_heuristics
 set_global('projectionist_heuristics', projectionist_heuristics)
