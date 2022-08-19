@@ -2,6 +2,6 @@ golang 1.18.2
 ruby 3.1.2
 nodejs 16.13.0
 elixir 1.13.4
-erlang 24.3
+erlang 25.0.1
 java openjdk-18
-kotlin 1.6.21
+kotlin 1.7.0

@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {"lua", "ruby", "elixir", "go", "ruby", "rust"},
+  ensure_installed = {"lua", "ruby", "elixir", "go", "ruby", "rust", "kotlin"},
   endwise = {
     enable = true,
   },
@@ -11,7 +11,6 @@ require('nvim-treesitter.configs').setup {
   },
   indent = {
     enable = true,
-    disable = {"ruby"}
   },
   incremental_selection = {
     enable = true,

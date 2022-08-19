@@ -1,9 +1,11 @@
 local nvim_lsp = require('lspconfig')
+
 nvim_lsp.rust_analyzer.setup{}
 nvim_lsp.gopls.setup{}
 nvim_lsp.elixirls.setup{
   cmd = { "/opt/homebrew/bin/elixir-ls" }
 }
+nvim_lsp.kotlin_language_server.setup{}
 
 function organizeImports(wait_ms)
   local params = vim.lsp.util.make_range_params()
@@ -41,6 +43,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
+
 local servers = { "solargraph", "pyright", "rust_analyzer", "tsserver", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {

@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
   use 'vim-ruby/vim-ruby'
   use 'ray-x/go.nvim'
   use 'sebdah/vim-delve'
+  use 'udalov/kotlin-vim'
 
   if Packer_bootstrap then
     require('packer').sync()

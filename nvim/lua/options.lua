@@ -64,7 +64,20 @@ go_heuristics['*_test.go'] = {
   alternate = '{}.go',
   type = 'test'
 }
+
+local kotlin_heuristics = {}
+kotlin_heuristics['src/main/kotlin/*.kt'] = {
+  alternate = 'src/test/kotlin/{}Test.kt',
+  type = 'source'
+}
+
+kotlin_heuristics['src/test/kotlin/*Test.kt'] = {
+  alternate = 'src/main/kotlin/{}.kt',
+  type = 'test'
+}
+
 projectionist_heuristics["*.go"] = go_heuristics
+projectionist_heuristics["*.kt"] = kotlin_heuristics
 
 local elixir_heuristics = {}
 elixir_heuristics['lib/*.ex'] = {
