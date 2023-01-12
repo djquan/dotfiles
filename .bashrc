@@ -68,10 +68,12 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --color
 export FZF_DEFAULT_OPTS="--ansi"
 
 source ~/.config/broot/launcher/bash/br
-eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias luamake=/Users/dan/Downloads/lua-language-server/3rd/luamake/luamake
 
 eval $(ssh-agent > /dev/null) > /dev/null
+. "$HOME/.cargo/env"
+
+source /Users/dan/.config/broot/launcher/bash/br
