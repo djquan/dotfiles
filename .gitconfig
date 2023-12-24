@@ -44,3 +44,8 @@
 
 [interactive]
   diffFilter = delta --color-only
+
+[bash]
+  showDirtyState = true
+  showInformativeStatus = true
+  showUntrackedFiles = true
