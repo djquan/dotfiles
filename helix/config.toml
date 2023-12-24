@@ -1,5 +1,0 @@
-theme = "monokai_pro"
-
-[editor]
-line-number = "relative"
-mouse = false
