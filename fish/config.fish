@@ -10,8 +10,11 @@ alias gh="git hist"
 alias g="git"
 alias ga="git add"
 alias gcmsg="git commit -m"
+alias gp="git push"
 
 alias ll="ls -lah"
 alias l="ls -l"
+
+alias vim="nvim"
 
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
