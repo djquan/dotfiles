@@ -6,7 +6,10 @@ set fish_greeting
 
 alias gd="git diff"
 alias gst="git status"
+alias gh="git hist"
 alias g="git"
+alias ga="git add"
+alias gcmsg="git commit -m"
 
 alias ll="ls -lah"
 alias l="ls -l"
