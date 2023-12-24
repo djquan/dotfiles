@@ -1,7 +1,8 @@
 function fish_prompt
+    set last_status $status
     set_color brwhite
     echo ""
-    if test $status -eq 0
+    if test $last_status -eq 0
         echo -n "😃"
     else
         echo -n "😞"
