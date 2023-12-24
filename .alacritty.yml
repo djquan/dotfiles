@@ -20,5 +20,5 @@ window:
 font:
   size: 14
   normal:
-    family: "JetBrains Mono"
+    family: "JetBrainsMono Nerd Font"
     style: "Regular"

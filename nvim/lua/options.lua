@@ -40,7 +40,7 @@ global.tokyonight_style = "night"
 global.tokyonight_italic_functions = true
 global.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme monokai-pro]]
 
 cmd("syntax on")
 cmd("set undodir=\"~/.vim/undodir\"") -- lua options do not expand home dir

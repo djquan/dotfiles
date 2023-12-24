@@ -62,7 +62,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-rake'
   use 'tpope/vim-bundler'
 
-  use 'folke/tokyonight.nvim'
+  use {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup()
+    end
+  }
+
   use 'christoomey/vim-tmux-navigator'
   use 'w0rp/ale'
   use 'Xuyuanp/nerdtree-git-plugin'
