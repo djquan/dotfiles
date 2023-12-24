@@ -5,6 +5,11 @@ then
   mv $HOME/.bashrc $HOME/.bashrc-old
 fi
 
+if [ ! -d $HOME/.asdf ];
+then
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
+fi
+
 for file in .*
 do
   if [ "$file" = "." ] || [ "$file" = ".." ] || [ ${file: -4} = ".swp" ] || [ "$file" = ".git" ];
@@ -20,6 +25,10 @@ do
     cmp --silent $PWD/$file $HOME/$file || echo "$HOME/$file exists and is different than $PWD/$file"
   fi
 done
+
+./sync_nvim.sh
+
+source $HOME/.bashrc
 
 for plugin in ruby elixir clojure elm kotlin nodejs racket golang java erlang
 do
