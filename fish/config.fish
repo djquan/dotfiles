@@ -4,9 +4,9 @@ end
 
 set fish_greeting
 
-
 alias gd="git diff"
 alias gst="git status"
+alias g="git"
 
 alias ll="ls -lah"
 alias l="ls -l"
