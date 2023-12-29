@@ -1,0 +1,25 @@
+[font]
+size = 14
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[shell]
+args = ["-l", "-c", "/opt/homebrew/bin/tmux new -A -s dev"]
+program = "/opt/homebrew/bin/fish"
+
+[window]
+dynamic_padding = true
+
+[window.dimensions]
+columns = 180
+lines = 60
+
+[window.padding]
+x = 10
+y = 10
+
+[window.position]
+x = 0
+y = 0

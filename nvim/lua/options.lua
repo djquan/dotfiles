@@ -36,10 +36,6 @@ global.nohlsearch=true
 global.noswapfile=true
 global.nowritebackup=true
 
-global.tokyonight_style = "night"
-global.tokyonight_italic_functions = true
-global.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-
 vim.cmd[[colorscheme monokai-pro]]
 
 cmd("syntax on")
