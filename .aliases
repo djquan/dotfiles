@@ -1,5 +1,5 @@
-alias ll='exa -alh'
-alias l='exa -lh'
+alias ll='eza -alh'
+alias l='eza -lh'
 
 alias cdc='cd ~/code'
 
