@@ -75,5 +75,3 @@ alias luamake=/Users/dan/Downloads/lua-language-server/3rd/luamake/luamake
 
 eval $(ssh-agent > /dev/null) > /dev/null
 . "$HOME/.cargo/env"
-
-source /Users/dan/.config/broot/launcher/bash/br
