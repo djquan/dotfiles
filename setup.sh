@@ -16,10 +16,7 @@ do
   fi
 done
 
-if [ -z "$CODESPACES" ] || [ "$CODESPACES" != "true" ]; then
-  ./setup_languages.sh
-fi
-
+./setup_languages.sh
 ./sync_nvim.sh
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
