@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("tokyonight-night")
 
 local options = vim.o
 local global = vim.g
