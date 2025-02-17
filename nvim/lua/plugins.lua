@@ -22,12 +22,7 @@ local plugins = {
   -- theme
   "loctvl842/monokai-pro.nvim",
 
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
+  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 
   'christoomey/vim-tmux-navigator',
 
