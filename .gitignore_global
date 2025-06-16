@@ -65,3 +65,6 @@ erl_crash.dump
 TEST_LAST
 
 .elixir_ls/
+
+# claude
+settings.local.json

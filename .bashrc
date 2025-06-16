@@ -43,20 +43,12 @@ case $- in
       *) return;;
 esac
 
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-
 export SHELL_SESSION_HISTORY=0
 
 HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-PROMPT_COMMAND='hasjobs=$(jobs -p)'
-PS1='\n$(if [[ $? == 0 ]]; then echo "😃"; else echo "😦"; fi)\[\e[0m\] $(echo "\[\e[1;94m\]$(dirs)\[\e[92m\]")\[\e[0m\]\[\e[35m\]$(__git_ps1) \[\e[0m\]${hasjobs:+\[\e[93m\](\j)}\[\e[0m\]\n\[\e[92m\]->\[\e[0m\] '
-
-LS_COLORS="ow=01;36;40" && export LS_COLORS
 
 [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
 
@@ -66,8 +58,6 @@ source "$HOME/.cargo/env"
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --color=always'
 export FZF_DEFAULT_OPTS="--ansi"
-
-source ~/.config/broot/launcher/bash/br
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
