@@ -11,4 +11,9 @@ export PATH="$HOME/bin:$PATH"
 # Add Go bin to PATH
 export PATH="$(go env GOPATH)/bin:$PATH"
 
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 command -v starship > /dev/null && eval "$(starship init zsh)"
