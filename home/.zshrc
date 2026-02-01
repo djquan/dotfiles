@@ -37,14 +37,19 @@ if command -v fzf &>/dev/null; then
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
         export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
     fi
+    # Catppuccin Mocha
     export FZF_DEFAULT_OPTS="
-        --color=bg+:#3c3836,bg:#282828,spinner:#fb4934,hl:#928374
-        --color=fg:#ebdbb2,header:#928374,info:#8ec07c,pointer:#fb4934
-        --color=marker:#fb4934,fg+:#ebdbb2,prompt:#fb4934,hl+:#fb4934
+        --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+        --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+        --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+        --color=selected-bg:#45475a
         --layout=reverse --height=40% --border"
     export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :200 {} 2>/dev/null || cat {}'"
     export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --color=always {} 2>/dev/null || ls -la {}'"
 fi
+
+# Bat theme
+export BAT_THEME="Catppuccin Mocha"
 
 # Zoxide
 command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"

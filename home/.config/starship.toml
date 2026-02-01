@@ -1,5 +1,5 @@
-# Gruvbox-inspired prompt
-palette = "gruvbox_dark"
+# Catppuccin Mocha prompt
+palette = "catppuccin_mocha"
 
 format = """
 $directory\
@@ -15,16 +15,16 @@ $line_break\
 $character"""
 
 [directory]
-style = "bold fg:bright-blue"
+style = "bold fg:blue"
 truncation_length = 3
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-style = "fg:bright-purple"
+style = "fg:mauve"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
-style = "fg:bright-yellow"
+style = "fg:yellow"
 
 [character]
 success_symbol = "[❯](bold green)"
@@ -33,37 +33,57 @@ error_symbol = "[❯](bold red)"
 [cmd_duration]
 min_time = 2_000
 format = "[$duration]($style) "
-style = "fg:bright-yellow"
+style = "fg:yellow"
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version})]($style) '
 symbol = " "
-style = "fg:bright-yellow"
+style = "fg:yellow"
 
 [golang]
 format = '[$symbol($version)]($style) '
 symbol = " "
-style = "fg:bright-cyan"
+style = "fg:sapphire"
 
 [rust]
 format = '[$symbol($version)]($style) '
 symbol = " "
-style = "fg:bright-red"
+style = "fg:peach"
 
 [nodejs]
 format = '[$symbol($version)]($style) '
 symbol = " "
-style = "fg:bright-green"
+style = "fg:green"
 
 [ruby]
 format = '[$symbol($version)]($style) '
 symbol = " "
 style = "fg:red"
 
-[palettes.gruvbox_dark]
-bright-blue = "#83a598"
-bright-cyan = "#8ec07c"
-bright-green = "#b8bb26"
-bright-purple = "#d3869b"
-bright-red = "#fb4934"
-bright-yellow = "#fabd2f"
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
