@@ -29,9 +29,14 @@ compinit
 # SSH (use macOS Keychain)
 ssh-add -l &>/dev/null || ssh-add --apple-use-keychain &>/dev/null
 
-# FZF
+# FZF (use fd if available for faster file finding)
 if command -v fzf &>/dev/null; then
     source <(fzf --zsh)
+    if command -v fd &>/dev/null; then
+        export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+        export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+    fi
     export FZF_DEFAULT_OPTS="
         --color=bg+:#3c3836,bg:#282828,spinner:#fb4934,hl:#928374
         --color=fg:#ebdbb2,header:#928374,info:#8ec07c,pointer:#fb4934

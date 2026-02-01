@@ -28,4 +28,6 @@ alias brexctl='TERM=xterm-256color brexctl'
 alias c='claude'
 alias ch='claude --chrome'
 
+alias lg='lazygit'
+
 

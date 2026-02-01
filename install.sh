@@ -44,6 +44,10 @@ BREW_PACKAGES=(
     eza
     gh
     bat
+    ripgrep
+    fd
+    jq
+    lazygit
 )
 
 #  Files to skip when linking home directory
