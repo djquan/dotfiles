@@ -24,8 +24,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ccusage='npx ccusage@latest'
 alias brexctl='TERM=xterm-256color brexctl'
 
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
 
 alias c='claude'
 alias ch='claude --chrome'

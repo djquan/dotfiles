@@ -16,6 +16,12 @@ typeset -A DIR_LINKS=(
     "$DOTFILES/btop"     "$HOME/.config/btop"
 )
 
+#  Config file symlinks (files that go in ~/.config/)
+#
+typeset -A CONFIG_FILES=(
+    "$DOTFILES/home/.config/starship.toml"  "$HOME/.config/starship.toml"
+)
+
 #  Claude Code symlinks (selective, not the whole directory)
 #  ~/.claude may contain other runtime data we don't want to track
 #
@@ -37,6 +43,7 @@ BREW_PACKAGES=(
     starship
     eza
     gh
+    bat
 )
 
 #  Files to skip when linking home directory
@@ -186,6 +193,14 @@ link_config_dirs() {
     done
 }
 
+link_config_files() {
+    echo ""
+    info "Linking config files..."
+    for src dest in "${(@kv)CONFIG_FILES}"; do
+        create_symlink "$src" "$dest"
+    done
+}
+
 link_claude_config() {
     echo ""
     info "Linking Claude Code config..."
@@ -206,6 +221,7 @@ main() {
     install_packages
     link_home_files
     link_config_dirs
+    link_config_files
     link_claude_config
 
     echo ""
