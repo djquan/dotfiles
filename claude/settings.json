@@ -1,0 +1,46 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo:*)",
+      "Bash(cat:*)",
+      "Bash(cd:*)",
+      "Bash(cp:*)",
+      "Bash(find:*)",
+      "Bash(gh:*)",
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(make:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(pwd)",
+      "Bash(pytest:*)",
+      "Bash(swift:*)",
+      "Bash(tee:*)",
+      "Bash(touch:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(xcrun:*)",
+      "Bash(yarn:*)",
+      "Edit",
+      "Glob",
+      "Grep",
+      "mcp__linear-server",
+      "Read",
+      "Task",
+      "WebFetch",
+      "WebSearch",
+      "Write"
+    ],
+    "deny": []
+  },
+  "alwaysThinkingEnabled": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/scripts/context-bar.sh"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
+}

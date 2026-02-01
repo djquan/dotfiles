@@ -1,0 +1,33 @@
+alias ll='eza -alh'
+alias l='eza -lh'
+
+alias cdc='cd ~/code'
+
+alias ghist='git hist'
+alias g='git'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gst='git status'
+alias gp='git push'
+alias gpl='git pull'
+alias ga='git add -v'
+alias gcmsg='git commit -m'
+
+if hash batcat 2>/dev/null; then
+  alias bat='batcat'
+fi
+
+alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias vim="nvim"
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias ccusage='npx ccusage@latest'
+alias brexctl='TERM=xterm-256color brexctl'
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+alias c='claude'
+alias ch='claude --chrome'
+
+

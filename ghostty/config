@@ -1,0 +1,30 @@
+# Basics
+shell-integration = zsh
+confirm-close-surface = false
+keybind = ctrl+a>r=reload_config
+window-save-state = always
+
+# Appearance
+mouse-hide-while-typing = true
+shell-integration-features = no-cursor
+cursor-style = block
+window-width = 100
+window-height = 30
+theme = Monokai Pro
+font-family = "FiraCode Nerd Font"
+
+# Pane/Window Management
+keybind = performable:ctrl+h=goto_split:left
+keybind = performable:ctrl+j=goto_split:bottom
+keybind = performable:ctrl+k=goto_split:top
+keybind = performable:ctrl+l=goto_split:right
+
+keybind = ctrl+a>shift+backslash=new_split:right
+keybind = ctrl+a>shift+minus=new_split:down
+keybind = ctrl+a>z=toggle_split_zoom
+keybind = ctrl+a>a=text:\x01
+
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+
+keybind = shift+enter=text:\x1b\r

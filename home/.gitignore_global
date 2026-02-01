@@ -1,0 +1,76 @@
+PLAN.md
+
+.cfg
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+ 
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+ 
+# Logs and databases #
+######################
+*.log
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+*.swp
+*.swo
+
+.idea/
+target/
+
+## Elixir
+/_build
+/cover
+/deps
+/doc
+erl_crash.dump
+*.ez
+
+
+# Phoenix: a web framework for Elixir
+_build/
+/db
+/deps
+/*.ez
+node_modules/
+erl_crash.dump
+/priv/static/
+/config/prod.secret.exs
+
+#vscode
+
+TEST_LAST
+
+.elixir_ls/
+
+# claude
+settings.local.json
+
+lazy-lock.json
