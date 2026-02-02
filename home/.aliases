@@ -20,10 +20,8 @@ fi
 alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 alias vim="nvim"
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ccusage='npx ccusage@latest'
 alias brexctl='TERM=xterm-256color brexctl'
-
 
 alias c='claude'
 alias ch='claude --chrome'
