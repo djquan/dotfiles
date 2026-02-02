@@ -54,15 +54,17 @@ export BAT_THEME="Catppuccin Mocha"
 # Zoxide
 command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
-# Starship prompt
-if command -v starship &>/dev/null; then
-    export STARSHIP_CONFIG="$HOME/.config/starship.toml"
-    eval "$(starship init zsh)"
-fi
-
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+#
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Starship prompt
+if command -v starship &>/dev/null; then
+    export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+    eval "$(starship init zsh)"
+fi
