@@ -1,5 +1,15 @@
 return {
   {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
+    keys = {
+      { "<C-h>", "<cmd>TmuxNavigateLeft<cr>" },
+      { "<C-j>", "<cmd>TmuxNavigateDown<cr>" },
+      { "<C-k>", "<cmd>TmuxNavigateUp<cr>" },
+      { "<C-l>", "<cmd>TmuxNavigateRight<cr>" },
+    },
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,

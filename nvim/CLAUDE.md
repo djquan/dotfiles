@@ -53,8 +53,8 @@ LazyVim extras enabled for enhanced language support:
 - `lang.markdown` - Markdown preview and editing
 
 ### Current Customizations
-1. **Colorscheme**: Tokyo Night (night style) set as default
-2. **Tmux Integration**: vim-tmux-navigator for seamless navigation
+1. **Colorscheme**: Catppuccin Mocha
+2. **Tmux Integration**: vim-tmux-navigator for seamless Ctrl-hjkl navigation across vim splits and tmux panes
 3. **Formatter Config**: Stylua configured with 2-space indentation
 
 ## Adding New Plugins
