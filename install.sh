@@ -50,6 +50,7 @@ BREW_PACKAGES=(
     jq
     lazygit
     tmux
+    libyaml
 )
 
 #  Files to skip when linking home directory
@@ -216,6 +217,23 @@ link_claude_config() {
     done
 }
 
+install_mise_runtimes() {
+    if ! command -v mise &>/dev/null; then
+        warn "mise not found, skipping runtime installation"
+        return 0
+    fi
+
+    echo ""
+    warn "Install mise runtimes from .tool-versions? [Y/n]"
+    read -r "choice?    "
+    if [[ ! "$choice" =~ ^[Nn]$ ]]; then
+        mise install
+        info "Mise runtimes installed"
+    else
+        warn "Skipped mise runtime installation"
+    fi
+}
+
 install_claude_code() {
     if command -v claude &>/dev/null; then
         info "Claude Code already installed"
@@ -242,6 +260,7 @@ main() {
 
     install_homebrew
     install_packages
+    install_mise_runtimes
     install_claude_code
     link_home_files
     link_config_dirs
