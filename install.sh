@@ -49,6 +49,7 @@ BREW_PACKAGES=(
     fd
     jq
     lazygit
+    tmux
 )
 
 #  Files to skip when linking home directory
@@ -215,6 +216,23 @@ link_claude_config() {
     done
 }
 
+install_claude_code() {
+    if command -v claude &>/dev/null; then
+        info "Claude Code already installed"
+        return 0
+    fi
+
+    echo ""
+    warn "Claude Code not found. Install it? [Y/n]"
+    read -r "choice?    "
+    if [[ ! "$choice" =~ ^[Nn]$ ]]; then
+        curl -fsSL https://claude.ai/install.sh | bash
+        info "Claude Code installed"
+    else
+        warn "Skipped Claude Code installation"
+    fi
+}
+
 main() {
     echo ""
     echo "┌─────────────────────────────────────────┐"
@@ -224,6 +242,7 @@ main() {
 
     install_homebrew
     install_packages
+    install_claude_code
     link_home_files
     link_config_dirs
     link_config_files
