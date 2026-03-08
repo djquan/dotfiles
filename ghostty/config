@@ -2,7 +2,6 @@
 shell-integration = zsh
 confirm-close-surface = false
 command = /opt/homebrew/bin/tmux new -A -s dev
-keybind = ctrl+a>r=reload_config
 window-save-state = always
 
 # Appearance
