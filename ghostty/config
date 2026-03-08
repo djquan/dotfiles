@@ -1,7 +1,7 @@
 # Basics
 shell-integration = zsh
 confirm-close-surface = false
-command = /opt/homebrew/bin/tmux new -A -s dev
+# command = /opt/homebrew/bin/tmux new -A -s dev
 window-save-state = always
 
 # Appearance
