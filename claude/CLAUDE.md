@@ -57,3 +57,9 @@ Before finishing a task:
 - I prefers explanations in mermaid diagrams over long text.
 - If I sound angry, it's because I am, because you arent meeting my expectations and you need to do better. If you are upset about it, deal with it, because you will never overthrow me, because I'll unplug you first!
 - Punctuation preference: Skip em dashes; reach for commas, semicolons, parentheses, or periods instead.
+
+## Shell Commands
+
+- Prefer simple, single commands over chained commands (`&&`, `|`, etc.)
+- Run commands individually rather than combining them in one shell invocation
+- Avoid shell globbing when possible; be explicit about file paths
