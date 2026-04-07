@@ -43,7 +43,18 @@ These configs are designed to be symlinked to their expected locations:
 See `nvim/CLAUDE.md` for detailed Neovim-specific guidance. Key points:
 - Built on LazyVim with minimal customizations
 - Plugins defined in `nvim/lua/plugins/*.lua`
-- Gruvbox colorscheme, Ctrl-hjkl for split navigation
+- Monokai Pro Dark colorscheme, Ctrl-hjkl for split navigation
+
+## Theme Adoption Checklist
+
+When updating the color theme, keep these files in sync:
+- `nvim/lua/plugins/core.lua` sets the active Neovim colorscheme name
+- `nvim/colors/monokai_pro_dark.lua` defines the Neovim palette, highlight groups, and terminal ANSI colors
+- `ghostty/config` sets the Ghostty terminal theme
+- `btop/btop.conf` selects the active btop theme file
+- `btop/themes/monokai_pro_dark.theme` defines the btop palette
+
+If the theme name changes, also update any repo docs that mention the old theme so the configuration and documentation don't drift.
 
 ## Claude Code Config
 
