@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
@@ -95,11 +98,9 @@
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
   },
-  "alwaysThinkingEnabled": true,
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
   },
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  }
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }
