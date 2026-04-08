@@ -53,7 +53,7 @@ LazyVim extras enabled for enhanced language support:
 - `lang.markdown` - Markdown preview and editing
 
 ### Current Customizations
-1. **Colorscheme**: Catppuccin Mocha
+1. **Colorscheme**: Monokai Pro (via loctvl842/monokai-pro.nvim, "pro" filter)
 2. **Tmux Integration**: vim-tmux-navigator for seamless Ctrl-hjkl navigation across vim splits and tmux panes
 3. **Formatter Config**: Stylua configured with 2-space indentation
 

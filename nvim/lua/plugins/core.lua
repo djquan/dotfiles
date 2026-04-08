@@ -10,9 +10,22 @@ return {
     },
   },
   {
+    "loctvl842/monokai-pro.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      filter = "pro",
+      terminal_colors = true,
+      styles = {
+        comment = { italic = true },
+        keyword = { italic = true },
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai_pro_dark",
+      colorscheme = "monokai-pro",
     },
   },
   {
