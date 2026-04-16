@@ -37,19 +37,19 @@ if command -v fzf &>/dev/null; then
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
         export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
     fi
-    # Catppuccin Mocha
+    # Monokai Pro
     export FZF_DEFAULT_OPTS="
-        --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
-        --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
-        --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
-        --color=selected-bg:#45475a
+        --color=bg+:#5b595c,bg:#2d2a2e,spinner:#fc9867,hl:#ff6188
+        --color=fg:#fcfcfa,header:#ff6188,info:#ab9df2,pointer:#fc9867
+        --color=marker:#a9dc76,fg+:#fcfcfa,prompt:#ab9df2,hl+:#ff6188
+        --color=selected-bg:#5b595c
         --layout=reverse --height=40% --border"
     export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :200 {} 2>/dev/null || cat {}'"
     export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --color=always {} 2>/dev/null || ls -la {}'"
 fi
 
 # Bat theme
-export BAT_THEME="Catppuccin Mocha"
+export BAT_THEME="Monokai Extended"
 
 # Zoxide
 command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
