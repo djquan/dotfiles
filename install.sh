@@ -34,7 +34,7 @@ typeset -A CLAUDE_LINKS=(
     "$DOTFILES/claude/skills"          "$HOME/.claude/skills"
 )
 
-#  Required tools (installed via Homebrew)
+#  Required tools (macOS via Homebrew)
 BREW_PACKAGES=(
     mise
     neovim
@@ -53,8 +53,49 @@ BREW_PACKAGES=(
     libyaml
 )
 
+#  Required tools (Arch via paru/yay)
+#  Names differ from brew where noted
+ARCH_PACKAGES=(
+    mise
+    neovim
+    git-delta
+    fzf
+    zoxide
+    starship
+    eza
+    github-cli
+    bat
+    ripgrep
+    fd
+    jq
+    lazygit
+    tmux
+    libyaml
+)
+
 #  Files to skip when linking home directory
 SKIP_FILES=(.DS_Store)
+
+#
+#  ┌─────────────────────────────────────────────────────────────────┐
+#  │                         OS DETECTION                           │
+#  └─────────────────────────────────────────────────────────────────┘
+#
+detect_os() {
+    case "$(uname -s)" in
+        Darwin) echo "macos" ;;
+        Linux)
+            if [[ -f /etc/arch-release ]] || [[ -f /etc/cachyos-release ]]; then
+                echo "arch"
+            else
+                echo "unknown"
+            fi
+            ;;
+        *) echo "unknown" ;;
+    esac
+}
+
+OS=$(detect_os)
 
 #
 #  ┌─────────────────────────────────────────────────────────────────┐
@@ -155,7 +196,7 @@ install_homebrew() {
     fi
 }
 
-install_packages() {
+install_brew_packages() {
     local missing=()
 
     for pkg in "${BREW_PACKAGES[@]}"; do
@@ -174,6 +215,67 @@ install_packages() {
     read -r "choice?    Install them? [Y/n]: "
     if [[ ! "$choice" =~ ^[Nn]$ ]]; then
         brew install "${missing[@]}"
+        info "Packages installed"
+    else
+        warn "Skipped package installation"
+    fi
+}
+
+detect_aur_helper() {
+    if command -v paru &>/dev/null; then
+        echo "paru"
+    elif command -v yay &>/dev/null; then
+        echo "yay"
+    fi
+}
+
+install_aur_helper() {
+    if [[ -n "$(detect_aur_helper)" ]]; then
+        info "AUR helper found: $(detect_aur_helper)"
+        return 0
+    fi
+
+    warn "No AUR helper (paru/yay) found. Install paru? [Y/n]"
+    read -r "choice?    "
+    if [[ "$choice" =~ ^[Nn]$ ]]; then
+        error "AUR helper required for package installation"
+        return 1
+    fi
+
+    sudo pacman -S --needed --noconfirm base-devel git
+    local tmpdir
+    tmpdir=$(mktemp -d)
+    git clone https://aur.archlinux.org/paru.git "$tmpdir/paru"
+    (cd "$tmpdir/paru" && makepkg -si --noconfirm)
+    rm -rf "$tmpdir"
+    info "paru installed"
+}
+
+install_arch_packages() {
+    local helper
+    helper=$(detect_aur_helper)
+    if [[ -z "$helper" ]]; then
+        error "No AUR helper available"
+        return 1
+    fi
+
+    local missing=()
+    for pkg in "${ARCH_PACKAGES[@]}"; do
+        if ! pacman -Qi "$pkg" &>/dev/null; then
+            missing+=("$pkg")
+        fi
+    done
+
+    if [[ ${#missing[@]} -eq 0 ]]; then
+        info "All packages already installed"
+        return 0
+    fi
+
+    echo ""
+    warn "Missing packages: ${missing[*]}"
+    read -r "choice?    Install them with $helper? [Y/n]: "
+    if [[ ! "$choice" =~ ^[Nn]$ ]]; then
+        "$helper" -S --needed "${missing[@]}"
         info "Packages installed"
     else
         warn "Skipped package installation"
@@ -257,9 +359,23 @@ main() {
     echo "│         Dotfiles Installation           │"
     echo "└─────────────────────────────────────────┘"
     echo ""
+    info "Detected OS: $OS"
 
-    install_homebrew
-    install_packages
+    case "$OS" in
+        macos)
+            install_homebrew
+            install_brew_packages
+            ;;
+        arch)
+            install_aur_helper
+            install_arch_packages
+            ;;
+        *)
+            error "Unsupported OS: $(uname -s)"
+            exit 1
+            ;;
+    esac
+
     install_mise_runtimes
     install_claude_code
     link_home_files
