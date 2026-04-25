@@ -5,6 +5,7 @@ command = tmux new -A -s dev
 window-save-state = always
 clipboard-read = allow
 clipboard-write = allow
+app-notifications = no-clipboard-copy
 
 # Appearance
 mouse-hide-while-typing = true

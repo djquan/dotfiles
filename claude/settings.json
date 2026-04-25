@@ -104,5 +104,6 @@
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "dark"
+  "theme": "dark",
+  "agentPushNotifEnabled": true
 }
