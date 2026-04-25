@@ -51,6 +51,7 @@ BREW_PACKAGES=(
     lazygit
     tmux
     libyaml
+    font-fira-code-nerd-font
 )
 
 #  Required tools (Arch via paru/yay)
@@ -71,6 +72,7 @@ ARCH_PACKAGES=(
     lazygit
     tmux
     libyaml
+    ttf-firacode-nerd
 )
 
 #  Files to skip when linking home directory
@@ -336,6 +338,39 @@ install_mise_runtimes() {
     fi
 }
 
+setup_gitconfig_local() {
+    local target="$HOME/.gitconfig.local"
+
+    echo ""
+    if [[ -f "$target" ]]; then
+        info "$target already exists, skipping"
+        return 0
+    fi
+
+    warn "Set up ~/.gitconfig.local with your git identity? [Y/n]"
+    read -r "choice?    "
+    if [[ "$choice" =~ ^[Nn]$ ]]; then
+        warn "Skipped gitconfig.local setup"
+        return 0
+    fi
+
+    local name email
+    read -r "name?    Name: "
+    read -r "email?    Email: "
+
+    if [[ -z "$name" || -z "$email" ]]; then
+        error "Name and email required, skipping"
+        return 1
+    fi
+
+    cat >"$target" <<EOF
+[user]
+  name = $name
+  email = $email
+EOF
+    info "Wrote $target"
+}
+
 install_claude_code() {
     if command -v claude &>/dev/null; then
         info "Claude Code already installed"
@@ -382,6 +417,7 @@ main() {
     link_config_dirs
     link_config_files
     link_claude_config
+    setup_gitconfig_local
 
     echo ""
     info "Done! You may need to restart your shell."
