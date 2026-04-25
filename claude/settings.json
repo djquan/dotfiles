@@ -94,6 +94,7 @@
     ],
     "deny": []
   },
+  "hooks": {},
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
@@ -103,5 +104,5 @@
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "hooks": {}
+  "theme": "dark"
 }

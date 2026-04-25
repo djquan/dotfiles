@@ -3,6 +3,8 @@ shell-integration = zsh
 confirm-close-surface = false
 command = tmux new -A -s dev
 window-save-state = always
+clipboard-read = allow
+clipboard-write = allow
 
 # Appearance
 mouse-hide-while-typing = true
@@ -12,6 +14,7 @@ window-width = 200
 window-height = 60
 theme = Monokai Pro
 font-family = "FiraCode Nerd Font"
+font-size = 11
 
 # Pane/Window Management
 # keybind = performable:ctrl+h=goto_split:left
