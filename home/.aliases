@@ -27,6 +27,7 @@ alias c='claude'
 alias ch='claude --chrome'
 
 vibe() {
+  sudo -v || return 1
   local desc="vibe pre-claude $(date +%Y-%m-%d_%H:%M:%S)"
   local root_snap home_snap
   root_snap=$(sudo snapper -c root create --description "$desc" --print-number) || return 1
