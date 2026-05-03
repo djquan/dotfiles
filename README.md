@@ -1,20 +1,16 @@
 # dotfiles
 
-Personal configuration for shell, Neovim, Ghostty, and Claude Code.
+Personal configuration for shell, Neovim, Ghostty, btop, and coding-agent workflows.
 
 ## Structure
 
 ```
 dotfiles/
+├── .agents/       # Codex project skills
 ├── home/          # Shell configs (~/.zshrc, ~/.aliases, ~/.gitconfig, etc.)
 ├── nvim/          # LazyVim-based Neovim config
 ├── ghostty/       # Ghostty terminal config
-├── btop/          # btop system monitor config
-└── claude/        # Claude Code settings and commands
-    ├── settings.json
-    ├── commands/
-    ├── skills/
-    └── scripts/
+└── btop/          # btop system monitor config
 ```
 
 ## Installation
@@ -49,4 +45,4 @@ The install script will:
 Managed via mise in `home/.tool-versions`:
 - Go, Ruby, Node.js, Python, Rust
 
-Update to latest versions with the Claude Code command `/tool-update`.
+Update to latest versions with the Codex skill `$update-tool-versions`.

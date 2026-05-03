@@ -23,17 +23,6 @@ typeset -A CONFIG_FILES=(
     "$DOTFILES/.tmux.conf"                  "$HOME/.tmux.conf"
 )
 
-#  Claude Code symlinks (selective, not the whole directory)
-#  ~/.claude may contain other runtime data we don't want to track
-#
-typeset -A CLAUDE_LINKS=(
-    "$DOTFILES/claude/CLAUDE.md"       "$HOME/.claude/CLAUDE.md"
-    "$DOTFILES/claude/settings.json"   "$HOME/.claude/settings.json"
-    "$DOTFILES/claude/commands"        "$HOME/.claude/commands"
-    "$DOTFILES/claude/scripts"         "$HOME/.claude/scripts"
-    "$DOTFILES/claude/skills"          "$HOME/.claude/skills"
-)
-
 #  Required tools (macOS via Homebrew)
 BREW_PACKAGES=(
     mise
@@ -312,15 +301,6 @@ link_config_files() {
     done
 }
 
-link_claude_config() {
-    echo ""
-    info "Linking Claude Code config..."
-    mkdir -p "$HOME/.claude"
-    for src dest in "${(@kv)CLAUDE_LINKS}"; do
-        create_symlink "$src" "$dest"
-    done
-}
-
 install_mise_runtimes() {
     if ! command -v mise &>/dev/null; then
         warn "mise not found, skipping runtime installation"
@@ -371,23 +351,6 @@ EOF
     info "Wrote $target"
 }
 
-install_claude_code() {
-    if command -v claude &>/dev/null; then
-        info "Claude Code already installed"
-        return 0
-    fi
-
-    echo ""
-    warn "Claude Code not found. Install it? [Y/n]"
-    read -r "choice?    "
-    if [[ ! "$choice" =~ ^[Nn]$ ]]; then
-        curl -fsSL https://claude.ai/install.sh | bash
-        info "Claude Code installed"
-    else
-        warn "Skipped Claude Code installation"
-    fi
-}
-
 main() {
     echo ""
     echo "┌─────────────────────────────────────────┐"
@@ -412,11 +375,9 @@ main() {
     esac
 
     install_mise_runtimes
-    install_claude_code
     link_home_files
     link_config_dirs
     link_config_files
-    link_claude_config
     setup_gitconfig_local
 
     echo ""

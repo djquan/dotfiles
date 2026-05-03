@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Tool Versions"
+  short_description: "Update mise runtime versions safely"
+  default_prompt: "Use $update-tool-versions to update every language runtime in my dotfiles .tool-versions file."

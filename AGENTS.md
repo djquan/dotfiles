@@ -1,23 +1,20 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to coding agents when working with code in this repository.
 
 ## Overview
 
-Personal dotfiles repository containing configuration for shell, Neovim, Ghostty terminal, and Claude Code. Uses a modular directory structure where each tool's config lives in its own folder.
+Personal dotfiles repository containing configuration for shell, Neovim, Ghostty terminal, and coding agents. Uses a modular directory structure where each tool's config lives in its own folder.
 
 ## Structure
 
 ```
 dotfiles/
+├── .agents/       # Codex project skills
 ├── home/          # Shell configs (~/.zshrc, ~/.aliases, ~/.gitconfig, etc.)
 ├── nvim/          # LazyVim-based Neovim config (symlink to ~/.config/nvim)
 ├── ghostty/       # Ghostty terminal config
-└── claude/        # Claude Code settings, skills, and commands
-    ├── settings.json      # Global Claude Code settings
-    ├── commands/          # Custom slash commands (/commit, /pull-request, etc.)
-    ├── skills/            # Reusable skill definitions
-    └── scripts/           # Helper scripts (context-bar.sh for status line)
+└── btop/          # btop system monitor config
 ```
 
 ## Key Tools in Use
@@ -35,12 +32,12 @@ dotfiles/
 These configs are designed to be symlinked to their expected locations:
 - `nvim/` → `~/.config/nvim`
 - `ghostty/` → `~/.config/ghostty`
-- `claude/` → `~/.claude`
+- `btop/` → `~/.config/btop`
 - Files in `home/` → `~/` (e.g., `home/.zshrc` → `~/.zshrc`)
 
 ## Neovim Config
 
-See `nvim/CLAUDE.md` for detailed Neovim-specific guidance. Key points:
+See `nvim/AGENTS.md` for detailed Neovim-specific guidance. Key points:
 - Built on LazyVim with minimal customizations
 - Plugins defined in `nvim/lua/plugins/*.lua`
 - Monokai Pro Dark colorscheme, Ctrl-hjkl for split navigation
@@ -56,8 +53,7 @@ When updating the color theme, keep these files in sync:
 
 If the theme name changes, also update any repo docs that mention the old theme so the configuration and documentation don't drift.
 
-## Claude Code Config
+## Agent Workflows
 
-- Custom status line script shows context usage, git status, and last user message
-- Pre-approved permissions for common tools (git, npm, pytest, etc.)
-- Custom commands: `/commit`, `/pull-request`, `/quality-sprint`, `/linear`
+- Codex project skills live under `.agents/skills/`.
+- Use `$update-tool-versions` to update `home/.tool-versions`.
