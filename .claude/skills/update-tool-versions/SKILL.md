@@ -5,11 +5,11 @@ description: Update the dotfiles mise language/runtime versions in home/.tool-ve
 
 # Update Tool Versions
 
-Use this skill in `/Users/dan/dotfiles` when the user asks to update tool, runtime, language, mise, or `.tool-versions` versions.
+Use this skill when the user asks to update tool, runtime, language, mise, or `.tool-versions` versions.
 
 ## Scope
 
-- Edit `/Users/dan/dotfiles/home/.tool-versions`; this is the repo-owned source for the user's home `.tool-versions`.
+- Edit `home/.tool-versions`; this is the repo-owned source for the user's home `.tool-versions`.
 - Parse tools from the first non-comment column of every nonblank line. The current known tools are `golang`, `ruby`, `nodejs`, `python`, and `rust`, but do not hard-code the list.
 - Preserve the file order and simple column alignment.
 - Do not add dependencies.
@@ -17,7 +17,7 @@ Use this skill in `/Users/dan/dotfiles` when the user asks to update tool, runti
 
 ## Workflow
 
-1. Read the current repo instructions and `/Users/dan/dotfiles/home/.tool-versions`.
+1. Read the current repo instructions and `home/.tool-versions`.
 2. Confirm `mise` is available:
 
    ```bash
@@ -40,23 +40,23 @@ Use this skill in `/Users/dan/dotfiles` when the user asks to update tool, runti
 Run install from the directory that contains `.tool-versions`:
 
 ```bash
-mise install -C /Users/dan/dotfiles/home
+mise install -C home
 ```
 
 Then confirm mise sees the updated tools:
 
 ```bash
-mise ls --current -C /Users/dan/dotfiles/home
+mise ls --current -C home
 ```
 
 Run direct version checks for the known tool commands when present:
 
 ```bash
-mise exec -C /Users/dan/dotfiles/home golang@<version> -- go version
-mise exec -C /Users/dan/dotfiles/home ruby@<version> -- ruby --version
-mise exec -C /Users/dan/dotfiles/home nodejs@<version> -- node --version
-mise exec -C /Users/dan/dotfiles/home python@<version> -- python --version
-mise exec -C /Users/dan/dotfiles/home rust@<version> -- rustc --version
+mise exec -C home golang@<version> -- go version
+mise exec -C home ruby@<version> -- ruby --version
+mise exec -C home nodejs@<version> -- node --version
+mise exec -C home python@<version> -- python --version
+mise exec -C home rust@<version> -- rustc --version
 ```
 
 If a command runs long or produces too much output, redirect it to a tmp file and read the file in chunks rather than restarting the command.

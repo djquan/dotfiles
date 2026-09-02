@@ -1,20 +1,21 @@
-# AGENTS.md
+# CLAUDE.md
 
-This file provides guidance to coding agents when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
 
-Personal dotfiles repository containing configuration for shell, Neovim, Ghostty terminal, and coding agents. Uses a modular directory structure where each tool's config lives in its own folder.
+Personal dotfiles repository containing configuration for shell, Neovim, Ghostty terminal, and Claude Code. Uses a modular directory structure where each tool's config lives in its own folder.
 
 ## Structure
 
 ```
 dotfiles/
-├── .agents/       # Codex project skills
+├── .claude/       # Repo-scoped Claude Code skills
 ├── home/          # Shell configs (~/.zshrc, ~/.aliases, ~/.gitconfig, etc.)
 ├── nvim/          # LazyVim-based Neovim config (symlink to ~/.config/nvim)
 ├── ghostty/       # Ghostty terminal config
-└── btop/          # btop system monitor config
+├── btop/          # btop system monitor config
+└── claude/        # Claude Code config (symlinked piecewise into ~/.claude)
 ```
 
 ## Key Tools in Use
@@ -34,10 +35,11 @@ These configs are designed to be symlinked to their expected locations:
 - `ghostty/` → `~/.config/ghostty`
 - `btop/` → `~/.config/btop`
 - Files in `home/` → `~/` (e.g., `home/.zshrc` → `~/.zshrc`)
+- `claude/` is linked selectively (`CLAUDE.md`, `settings.json`, `commands/`, `scripts/`, `skills/`) rather than as a whole directory, since `~/.claude` also holds untracked runtime data
 
 ## Neovim Config
 
-See `nvim/AGENTS.md` for detailed Neovim-specific guidance. Key points:
+See `nvim/CLAUDE.md` for detailed Neovim-specific guidance. Key points:
 - Built on LazyVim with minimal customizations
 - Plugins defined in `nvim/lua/plugins/*.lua`
 - Monokai Pro Dark colorscheme, Ctrl-hjkl for split navigation
@@ -55,5 +57,6 @@ If the theme name changes, also update any repo docs that mention the old theme 
 
 ## Agent Workflows
 
-- Codex project skills live under `.agents/skills/`.
-- Use `$update-tool-versions` to update `home/.tool-versions`.
+- Repo-scoped skills live under `.claude/skills/`; they apply only when working in this repository.
+- Global Claude Code config lives under `claude/`: personal `CLAUDE.md`, `settings.json`, `commands/`, `skills/`, and the `scripts/context-bar.sh` statusline. These are symlinked into `~/.claude` and apply everywhere.
+- Use the `update-tool-versions` skill to update `home/.tool-versions`.
