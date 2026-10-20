@@ -11,6 +11,7 @@ dotfiles/
 ├── nvim/          # LazyVim-based Neovim config
 ├── ghostty/       # Ghostty terminal config
 ├── btop/          # btop system monitor config
+├── ssh/           # SSH client config (~/.ssh/config)
 └── claude/        # Claude Code settings and commands
     ├── settings.json
     ├── commands/

@@ -21,6 +21,7 @@ typeset -A DIR_LINKS=(
 typeset -A CONFIG_FILES=(
     "$DOTFILES/home/.config/starship.toml"  "$HOME/.config/starship.toml"
     "$DOTFILES/.tmux.conf"                  "$HOME/.tmux.conf"
+    "$DOTFILES/ssh/config"                  "$HOME/.ssh/config"
 )
 
 #  Claude Code symlinks (selective, not the whole directory)

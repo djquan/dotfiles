@@ -15,6 +15,7 @@ dotfiles/
 ├── nvim/          # LazyVim-based Neovim config (symlink to ~/.config/nvim)
 ├── ghostty/       # Ghostty terminal config
 ├── btop/          # btop system monitor config
+├── ssh/           # SSH client config (symlink to ~/.ssh/config)
 └── claude/        # Claude Code config (symlinked piecewise into ~/.claude)
 ```
 
@@ -34,6 +35,7 @@ These configs are designed to be symlinked to their expected locations:
 - `nvim/` → `~/.config/nvim`
 - `ghostty/` → `~/.config/ghostty`
 - `btop/` → `~/.config/btop`
+- `ssh/config` → `~/.ssh/config`
 - Files in `home/` → `~/` (e.g., `home/.zshrc` → `~/.zshrc`)
 - `claude/` is linked selectively (`CLAUDE.md`, `settings.json`, `commands/`, `scripts/`, `skills/`) rather than as a whole directory, since `~/.claude` also holds untracked runtime data
 

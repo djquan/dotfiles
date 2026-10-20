@@ -27,7 +27,9 @@ autoload -Uz compinit
 compinit
 
 # SSH (use macOS Keychain)
-ssh-add -l &>/dev/null || ssh-add --apple-use-keychain &>/dev/null
+if [[ "$OSTYPE" == darwin* ]]; then
+    ssh-add -l &>/dev/null || ssh-add --apple-load-keychain -q
+fi
 
 # FZF (use fd if available for faster file finding)
 if command -v fzf &>/dev/null; then
